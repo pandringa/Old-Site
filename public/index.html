@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Raspberry Pi - Light Notifier</title>
+<link rel="stylesheet" href="assets/ui/css/black-tie/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css" />
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script src="http://connect.facebook.net/en_US/all.js"></script>
+<div id="header">
+	<h1>Light notifications!</h1>
+</div>
+<table id="connect">
+<tr>
+<td>
+	<img src="assets/img/Facebook.png" data-bind="click: loginFB, visible: !loggedInFB(), event: {mouseover:over, mouseout: out}">
+	<span data-bind="visible: loggedInFB(), text: fbLoggedInText"></span> 
+</td><td>
+	<img src="assets/img/Twitter.png" data-bind="click: loginTwitter, visible: !loggedInTwitter(), event: {mouseover:over, mouseout: out}">
+</td>
+</tr>
+</table>
+
+<div id="body">
+	<table id="main">
+	<tr data-bind="foreach: data">
+	<td>
+		<h3 class="title" data-bind="text: name"></h3>
+		<div class="color" data-bind="style: {'background-color': color}"> <!--CHANGE-->
+		</div><br>
+		<form action="/update" method="post" class="form">
+			Color: <input type="color" name="color" class="choose" data-bind="value: color">
+			 <input type="text" name="htmlColor" class="hex" size=7 data-bind="value: color"><br /> <!--CHANGE-->
+			API: <select  name="api"  class="api" data-bind="options: $root.services, value: currService">
+			</select><br />
+			Method: <select name="method" data-bind="options: currOptions, value: currMethod">
+			</select><br />
+			Target: <input type="text" name="target" class="target" data-bind="value: target"><br />
+			<input type="hidden" name="num" value=1>
+			<input type="hidden" name="token" value="API TOKEN">
+			<input type="Submit" name="submit" value="Update" class="submit">
+		</form>
+	</td>
+	<!-- /ko -->
+	</tr>
+	</table>
+	</div>
+	<h2>Documentation:</h2>
+	<h4 class="apiHeader">Facebook</h4>
+	<table class="docs">
+	<thead>
+		<tr><td>Method</td><td>Target</td><td>Description</td></tr>
+	</thead>
+	<tbody>
+	<tr><td>Notification</td><td>me()</td><td>Lights up if there is an unread notification.</td></tr>
+	<tr><td>Online presence</td><td>[Username or ID]</td><td>Lights up if the given user is online</td></tr>
+	<tr><td>Message</td><td>[Username or ID], "all"</td><td>Lights up if there is a new message from the given user, ("all" for all users).</td></tr>
+	<tr><td>Friend request</td><td>me()</td><td>Lights up if there is an unread friend request.</td></tr>
+	</tbody>
+	</table>
+	<h4 class="apiHeader">Twitter:</h4>
+	<table class="docs">
+	<thead>
+		<tr><td>Method</td><td>Target</td><td>Description</td></tr>
+	</thead>
+	<tbody>
+	<tr><td>Mention</td><td>(none)</td><td>Lights up if someone mentions you in their tweet.</td></tr>
+	<tr><td>New follower</td><td>(none)</td><td>Lights up if you have received a follower in the last 24 hours.</td></tr>
+	</tbody>
+	</table>
+	<script type='text/javascript' src='assets/js/lib/jquery.js'></script>
+	<script type="text/javascript" src="assets/ui/js/jquery-ui.js"></script>
+	<script type='text/javascript' src='assets/js/lib/knockout.js'></script>
+	<!-- <script type="text/javascript" src="http://platform.twitter.com/anywhere.js?id=YOUR_ID_APP&amp;v=1"></script>  -->
+	<script type="text/javascript" src="assets/js/index.js"></script>
+
+</html>
