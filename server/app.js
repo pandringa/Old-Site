@@ -36,7 +36,7 @@ server.use(express.static(__dirname + "/../public"));
 
 var db = mysql.createConnection({
 			host: '127.0.0.1',
-			database: 'PiLights',
+			database: 'andringa',
 			user: 'root',
 			password: ''
 		});
