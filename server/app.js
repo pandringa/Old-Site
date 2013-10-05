@@ -34,6 +34,31 @@ server.engine('html', function(filename, options, callback) {
 
 server.use(express.static(__dirname + "/../public"));
 
+//Adds layout to res, which renders header/footer
+server.use(function(req, res, next){
+	res.layout = function(page, obj){
+		var data = obj || {};
+
+		//SET DEFAULTS FOR VALUES TO BE RENDERED IN EJS
+		data.title = data.title || 'Andrin.ga',
+  		data.tags = data.tags || 'peter andringa, andringa, peter james andringa, peter andringa dc, andrin.ga, pja, peter andringa tj, peter andringa tjhsst ',
+   		data.description = data.description || 'Andrin.ga - The personal website of Peter Andringa'
+		data.test = data.test || 'THIS IS A TEST!';
+
+		res.render(page, data, function(err, html){
+			if(err) app.error(err);
+			console.log(html);
+			data.__yield = html;
+			res.render('../views/layout', data);
+		});
+	};
+
+	next();
+});
+
+server.use(express.cookieParser());
+server.use(express.bodyParser());
+
 var db = mysql.createConnection({
 			host: '127.0.0.1',
 			database: 'andringa',
@@ -59,6 +84,6 @@ server.configure(function(){
 stServer = server.listen(expressPort);
 
 
-//require('./Routes')(server, db);
+require('./../routes/index')(server, db);
 
 

@@ -12,7 +12,6 @@
     "express": "~3.3.4w",
     "when": "~2.3.0",
     "request": "~2.27.0",
-    "cron": "~1.0.1",
     "ejs": "0.8.4",
     "forever": "0.10.8",
     "forever-monitor": "1.2.2",
