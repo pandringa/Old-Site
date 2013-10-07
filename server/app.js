@@ -7,6 +7,7 @@ var server = module.exports = express();
 var expressPort = 3000;
 //var realTimePort = process.argv[3];
 var stServer;
+server.siteRootDomain = ""; //Fill in later
 
 
 function getDate() {
@@ -21,7 +22,6 @@ function getDate() {
 }
 
 
-//allow res.render('someHtml.html')
 var path = require('path');
 var viewDir = path.join(__dirname, '../public');
 server.set('view engine', 'ejs');
@@ -34,7 +34,7 @@ server.engine('html', function(filename, options, callback) {
 
 server.use(express.static(__dirname + "/../public"));
 
-//Adds layout to res, which renders header/footer
+//Function to render header and footer along with content
 server.use(function(req, res, next){
 	res.layout = function(page, obj){
 		var data = obj || {};
@@ -65,6 +65,32 @@ var db = mysql.createConnection({
 			user: 'root',
 			password: ''
 		});
+
+function handleDisconnect(connection) {
+  connection.on('error', function(err) {
+    if (!err.fatal) {
+      return;
+    }
+
+    if (err.code !== 'PROTOCOL_CONNECTION_LOST') {
+      throw err;
+    }
+
+    console.log('Re-connecting lost connection: '.color("red", "reverse"), err.stack);
+
+    connection = mysql.createConnection(connection.config);
+    handleDisconnect(connection);
+    connection.connect(function(err) {
+	  	if(err) {
+	    	console.log("Error trying to reconnect to mySQL:".color("red", "reverse"), err);
+	  	} else {
+	    	console.log("Reconnected to MYSQL".color("blue", "reverse"));
+	  	}
+	});
+  });
+}
+
+handleDisconnect(db);
 db.connect(function(err) {
   	if(err) {
     	console.log("Looks like you can't connect to MySQL:".color("red", "reverse"), err);
