@@ -3,27 +3,12 @@ var express = require("express");
 var mysql = require('mysql');
 var color = require("string-color");
 var server = module.exports = express();
-//var socketProtocolServer;
-var expressPort = 3000;
-//var realTimePort = process.argv[3];
-var stServer;
-server.siteRootDomain = ""; //Fill in later
-
-
-function getDate() {
-	var d = new Date();
-
-	function pad(n) {
-		return n < 10 ? '0' + n : n;
-	}
-	return "[" + d.getUTCFullYear() + '-' + pad(d.getUTCMonth() + 1) + '-' +
-		pad(d.getUTCDate()) + ' ' + pad(d.getUTCHours()) + ':' +
-		pad(d.getUTCMinutes()) + ':' + pad(d.getUTCSeconds()) + ']';
-}
-
-
+var port = 3000;
+var appServer;
+server.siteRootDomain = "http://andrin.ga/"; //Fill in later
 var path = require('path');
 var viewDir = path.join(__dirname, '../public');
+
 server.set('view engine', 'ejs');
 server.engine('html', function(filename, options, callback) {
 	fs.readFile(filename, 'utf8', function(err, str){
@@ -32,14 +17,14 @@ server.engine('html', function(filename, options, callback) {
     });
 });
 
-server.use(express.static(__dirname + "/../public"));
+server.use(express.static(__dirname + "/../public")); //Root folder of app
 
-//Function to render header and footer along with content
+//Puts together webpages (header+page+footer)
 server.use(function(req, res, next){
 	res.layout = function(page, obj){
 		var data = obj || {};
 
-		//SET DEFAULTS FOR VALUES TO BE RENDERED IN EJS
+		//SET DEFAULTS FOR EJS
 		data.title = data.title || 'Andrin.ga',
   		data.tags = data.tags || 'peter andringa, andringa, peter james andringa, peter andringa dc, andrin.ga, pja, peter andringa tj, peter andringa tjhsst ',
    		data.description = data.description || 'Andrin.ga - The personal website of Peter Andringa'
@@ -47,7 +32,6 @@ server.use(function(req, res, next){
 
 		res.render(page, data, function(err, html){
 			if(err) app.error(err);
-			console.log(html);
 			data.__yield = html;
 			res.render('../views/layout', data);
 		});
@@ -90,10 +74,10 @@ function handleDisconnect(connection) {
   });
 }
 
-handleDisconnect(db);
+handleDisconnect(db); //Manages disconnections of DB
 db.connect(function(err) {
   	if(err) {
-    	console.log("Looks like you can't connect to MySQL:".color("red", "reverse"), err);
+    	console.log("MySQL Connection error:".color("red", "reverse"), err);
   	} else {
     	console.log("Connected to MYSQL".color("blue", "reverse"));
   	}
@@ -105,10 +89,7 @@ server.configure(function(){
   server.use(server.router);
 });
 
-
-//stServer = socketProtocolServer.listen(expressPort);
-stServer = server.listen(expressPort);
-
+mainServer = server.listen(port);
 
 require('./../routes/index')(server, db);
 
