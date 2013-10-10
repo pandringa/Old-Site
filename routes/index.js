@@ -28,7 +28,7 @@ module.exports = function(app, passport) {
 		console.log("Visitor!");
 		if (req.headers.host.match(/^www\./)) {
 			console.log("Redirecting...");
-		    res.writeHead (301, {'Location': 'http://andrin.ga'});
+		    res.redirect(301, 'http://andrin.ga');
 		} else { 
 			return next();
 		}

@@ -1,0 +1,36 @@
+#header{
+	margin: 5%;
+}
+#content{
+	margin: 15px;
+	margin-left: 12px;
+}
+#footer{
+
+}
+.logo{
+	margin: auto;
+	margin-bottom: 10px;
+	float: none;
+	padding: 0px;
+}
+.nav{
+	clear: both;
+	display: block;
+	margin: auto;
+	float: none;
+	padding: 0px;
+}
+.nav .links{
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#content{
+	margin-top: 50px;
+}
+#header{
+	text-align: center;
+}

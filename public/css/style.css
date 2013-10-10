@@ -1,48 +1,73 @@
 body{
 	font-family: 'lato', sans-serif;
 	font-weight: 300;
+	background-image: url(../img/backgrounds/ticks.png);
+	background-repeat: repeat;
 }
 #header{
 	height: 75px;
-	padding-left: 50px;
-	padding-right: 50px;
-	position: fixed;
+	margin-left: 11%;
+	margin-right: 11%;
+	padding-top: 5px;
+	display: block;
 	top: 0px;
-	background-color: white;
 }
 #content{
-	margin-top: 100px;
-	padding-left: 50px;
-	padding-right: 50px;
+	margin: 10%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	padding: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: 5px 5px 5px #AAA;
+	clear: both;
+	background-color: white;
 }
 #footer{
-	padding-left: 50px;
-	padding-right: 50px;
+	margin: 12%;
+	margin-top: 25px;
 }
 
 .logo{
 	font-family: 'Snippet';
 	font-weight: normal;
+	color: black;
 	display: inline-block;
-	padding-left: 20px;
 	font-size: 60px;
 	float: left;
+	margin-bottom: 10px;
+}
+.logo:hover{
+	color: #0099CC;
+	text-shadow:0 1px 0 rgba(255,255,255,0.8);
 }
 .nav{
 	font-family: "Snippet";
+	display: inline-block;
 	color: black;
 	float: right;
 	font-size: 20px;
-	padding-top: 15px;
-	padding-right: 20px;
+	padding-top: 34px;
 	padding-bottom: 15px;
-	margin-top: 10px;
-	margin-left: 100px;
 }
 .nav .links{
 	text-decoration: none;
 	color: black;
-	margin-left: 25px;
-	margin-right: 25px;
+	margin-left: 15px;
+	margin-right: 15px;
 	display: inline-block;
+}
+.links:hover{
+	color: #0099CC;
+	text-shadow:0 1px 0 rgba(255,255,255,0.75);
+}
+
+/* high-resolution devices */
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+    body{
+        background-image: url(../img/backgrounds/ticks_@2X.png);
+    }
 }
