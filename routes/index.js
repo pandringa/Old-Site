@@ -5,7 +5,6 @@
 
 //home page
 var index = function(req, res) {
-	console.log("in index")
   	res.layout('index', {
   		title: 'Andrin.ga',
    		description: 'Andrin.ga - The personal website of Peter Andringa',
@@ -21,15 +20,20 @@ var about = function(req, res) {
 };
 
 
+
 //Export root functions
 module.exports = function(app, passport) {
+	//redirect www.andrin.ga to andrin.ga
+	app.all("*", function (req, res, next){
+		console.log("Visitor!");
+		if (req.headers.host.match(/^www\./)) {
+			console.log("Redirecting...");
+		    res.writeHead (301, {'Location': 'http://andrin.ga'});
+		} else { 
+			return next();
+		}
+	});
+
 	app.get('/', index);
 	app.get('/about', about);
-
-	//Sample 301 redirect for old pages
-	/*
-	app.get('/old-page-name', function(req, res) {
-		res.redirect(301, app.siteRootDomain+"/new-page");
-	});
-	*/
 }
