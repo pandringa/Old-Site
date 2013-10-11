@@ -7,7 +7,7 @@ var port = 3000;
 var appServer;
 server.siteRootDomain = "http://andrin.ga/"; //Fill in later
 var path = require('path');
-var viewDir = path.join(__dirname, '../public');
+var viewDir = path.join(__dirname, '/public');
 
 server.set('view engine', 'ejs');
 server.engine('html', function(filename, options, callback) {
@@ -17,7 +17,7 @@ server.engine('html', function(filename, options, callback) {
     });
 });
 
-server.use(express.static(__dirname + "/../public")); //Root folder of app
+server.use(express.static(__dirname + "/public")); //Root folder of app
 
 //Puts together webpages (header+page+footer)
 server.use(function(req, res, next){
@@ -33,7 +33,7 @@ server.use(function(req, res, next){
 		res.render(page, data, function(err, html){
 			if(err) app.error(err);
 			data.__yield = html;
-			res.render('../views/layout', data);
+			res.render('/views/layout', data);
 		});
 	};
 
@@ -91,6 +91,6 @@ server.configure(function(){
 
 mainServer = server.listen(port);
 
-require('./../routes/index')(server, db);
+require('./routes/index')(server, db);
 
-
+console.log('Server Running!'.color("green"));
