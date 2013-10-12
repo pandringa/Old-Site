@@ -4,6 +4,7 @@ body{
 	background-image: url(../img/backgrounds/ticks.png);
 	background-repeat: repeat;
 }
+
 #header{
 	height: 75px;
 	margin-left: 11%;
@@ -13,9 +14,10 @@ body{
 	top: 0px;
 }
 #content{
+	top: 100px;
 	margin: 10%;
-	margin-top: 25px;
-	margin-bottom: 25px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	padding: 30px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -23,10 +25,7 @@ body{
 	clear: both;
 	background-color: white;
 }
-#footer{
-	margin: 12%;
-	margin-top: 25px;
-}
+
 
 .logo{
 	font-family: 'Snippet';
@@ -40,6 +39,15 @@ body{
 .logo:hover{
 	color: #0099CC;
 	text-shadow:0 1px 0 rgba(255,255,255,0.8);
+}
+.bg {
+  background: url(../img/backgrounds/geometry.png) repeat;
+  position: fixed;
+  width: 100%;
+  height: 300%;
+  top:0;
+  left:0;
+  z-index: -1;
 }
 .nav{
 	font-family: "Snippet";
@@ -61,6 +69,90 @@ body{
 	color: #0099CC;
 	text-shadow:0 1px 0 rgba(255,255,255,0.75);
 }
+
+#footer{
+	padding: 15px;
+	padding-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 60px;
+	text-align: center;
+}
+.footerContent{
+	display: inline;
+	text-align: right;
+}
+#footerText{
+	margin-right: 11%;
+	display: block;
+	text-align: right;
+}
+/* Social Icons stuff: */
+#social{
+	float: left;
+	margin-left: 11%;
+	top: -5px;
+	display: block;
+	height: 60px;
+	clear: both;
+}
+.socialIcons{
+	background-image: url('../img/social.svg');
+    width: 60px;
+	height: 60px;
+	display: inline-block;
+	margin: 0px 5px;
+}
+
+#Twitter{
+	background-position: 0px -2px;
+}
+#Twitter:hover{
+	background-position: 0px -202px;
+}
+
+#Facebook{
+	background-position: -79px -2px;
+}
+#Facebook:hover{
+	background-position: -79px -201.5px;
+}
+
+#Github{
+	background-position: -237px -2px;
+}
+#Github:hover{
+	background-position: -237px -202px;
+}
+
+#GooglePlus{
+	background-position: -158px -83px;
+}
+#GooglePlus:hover{
+	background-position: -158px -280.5px;
+}
+
+#Blog{
+	background-position: -79px -83px;
+}
+#Blog:hover{
+	background-position: -79px -280.5px;
+}
+
+#Dropbox{
+	background-position: -474px -83px;
+}
+#Dropbox:hover{
+	background-position: -474px -280px;
+}
+
+#Medium{
+	background-image: url(../img/medium-black.png);
+}
+#Medium:hover{
+	background-image: url(../img/medium-color.png);
+}
+
 
 /* high-resolution devices */
 @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),

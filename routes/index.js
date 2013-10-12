@@ -19,6 +19,20 @@ var about = function(req, res) {
 	})
 };
 
+var projects = function(req, res) {
+	res.layout('projects', {
+		title: 'Projects | Andrin.ga',
+   		description: 'Peter\'s Current Projects'
+	})
+};
+
+var blog = function(req, res) {
+	res.layout('blog', {
+		title: 'Blog | Andrin.ga',
+   		description: 'Peter\'s Blog'
+	})
+};
+
 
 
 //Export root functions
@@ -36,4 +50,6 @@ module.exports = function(app, passport) {
 
 	app.get('/', index);
 	app.get('/about', about);
+	app.get('/projects', projects)
+	app.get('/blog', blog);
 }
