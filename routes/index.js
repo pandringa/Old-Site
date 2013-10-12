@@ -33,6 +33,10 @@ var blog = function(req, res) {
 	})
 };
 
+var admin = function(req, res) {
+	res.redirect('http://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=player_embedded'); //Link to a certain special music video
+};
+
 
 
 //Export root functions
@@ -52,4 +56,5 @@ module.exports = function(app, passport) {
 	app.get('/about', about);
 	app.get('/projects', projects)
 	app.get('/blog', blog);
+	app.get('/admin', admin);
 }
