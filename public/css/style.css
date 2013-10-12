@@ -105,42 +105,42 @@ body{
 }
 
 #Twitter{
-	background-position: 0px -2px;
+	background-position: 0px 0px;
 }
 #Twitter:hover{
-	background-position: 0px -202px;
+	background-position: 0px -200px;
 }
 
 #Facebook{
-	background-position: -79px -2px;
+	background-position: -79px 0px;
 }
 #Facebook:hover{
-	background-position: -79px -201.5px;
+	background-position: -79px -200px;
 }
 
 #Github{
-	background-position: -237px -2px;
+	background-position: -237px 0px;
 }
 #Github:hover{
-	background-position: -237px -202px;
+	background-position: -237px -200px;
 }
 
 #GooglePlus{
-	background-position: -158px -83px;
+	background-position: -158px -81px;
 }
 #GooglePlus:hover{
-	background-position: -158px -280.5px;
+	background-position: -158px -279px;
 }
 
 #Blog{
-	background-position: -79px -83px;
+	background-position: -79px -81px;
 }
 #Blog:hover{
-	background-position: -79px -280.5px;
+	background-position: -79px -279px;
 }
 
 #Dropbox{
-	background-position: -474px -83px;
+	background-position: -474px -80px;
 }
 #Dropbox:hover{
 	background-position: -474px -280px;
