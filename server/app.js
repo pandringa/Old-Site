@@ -30,10 +30,13 @@ server.use(function(req, res, next){
    		data.description = data.description || 'Andrin.ga - The personal website of Peter Andringa'
 		data.test = data.test || 'THIS IS A TEST!';
 
-		res.render(page, data, function(err, html){
-			if(err) app.error(err);
+		//BAKEND OR FRONTEND, DEFAULTS TO FRONTEND
+		var site = data.site || "frontend"; 
+
+		res.render(site+'/'+page, data, function(err, html){
+			if(err) console.error(err);
 			data.__yield = html;
-			res.render('../views/layout', data);
+			res.render('../views/'+site+'/layout', data);
 		});
 	};
 

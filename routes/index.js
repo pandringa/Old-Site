@@ -37,13 +37,19 @@ var admin = function(req, res) {
 	res.redirect('http://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=player_embedded'); //Link to a certain special music video
 };
 
+var backend = function(req, res) {
+	res.layout('login', {
+		title: "Login to Backend",
+		site: "backend"
+	})
+};
+
 
 
 //Export root functions
 module.exports = function(app, passport) {
 	//redirect www.andrin.ga to andrin.ga
 	app.all("*", function (req, res, next){
-		console.log("Visitor!");
 		if (req.headers.host.match(/^www\./)) {
 			console.log("Redirecting...");
 		    res.redirect(301, 'http://andrin.ga');
@@ -56,5 +62,7 @@ module.exports = function(app, passport) {
 	app.get('/about', about);
 	app.get('/projects', projects)
 	app.get('/blog', blog);
-	app.get('/admin', admin);
+	app.get('/admin-panel', admin);
+	app.get('/backend', auth);
+	app.get('/backend/*', auth);
 }
