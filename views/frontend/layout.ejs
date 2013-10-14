@@ -36,8 +36,10 @@
      <%- include header %>
   </div>
   <div id="content">
+    <div id="content-inner">
       <%- __yield %>
       <!-- /__yield -->
+    </div>
   </div>
   <div id="footer">
       <%- include footer %>
@@ -45,6 +47,10 @@
 
   <script>
     if(window.chrome) document.getElementById('Medium').id = 'Medium-chrome'; //Hack to fix SVG positioning in chrome
+
+    var highlight = '<%= highlight %>';
+    console.log(highlight)
+    document.getElementById(highlight).id = "nav-selected"; //Select nav element of current page
   </script>
 </body>
 </html>

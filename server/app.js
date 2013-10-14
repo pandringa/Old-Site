@@ -104,6 +104,11 @@ server.configure(function(){
 
 mainServer = server.listen(port);
 
+//Locals
+server.locals.mainLink = "http://localhost:3000"
+server.locals.blogLink = "http://localhost:4000";
+
+
 require('./../routes/frontend')(server, db);
 require('./../routes/backend')(server, db);
 

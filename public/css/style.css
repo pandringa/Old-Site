@@ -5,6 +5,18 @@ body{
 	background-repeat: repeat;
 }
 
+::-moz-selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
+::selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
 #header{
 	height: 75px;
 	margin-left: 11%;
@@ -25,7 +37,13 @@ body{
 	clear: both;
 	background-color: white;
 }
-
+#content-inner{
+	display: block;
+	width: 90%;
+	margin: auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
 
 .logo{
 	font-family: 'Snippet';
@@ -35,6 +53,7 @@ body{
 	font-size: 60px;
 	float: left;
 	margin-bottom: 10px;
+	text-decoration: none;
 }
 .logo:hover{
 	color: #0099CC;
@@ -66,6 +85,10 @@ body{
 	display: inline-block;
 }
 .links:hover{
+	color: #0099CC;
+	text-shadow:0 1px 0 rgba(255,255,255,0.75);
+}
+#nav-selected{
 	color: #0099CC;
 	text-shadow:0 1px 0 rgba(255,255,255,0.75);
 }

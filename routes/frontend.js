@@ -2,35 +2,35 @@
 /*** ============================================================== */
 /** ======================== PAGE BUILDING ======================== **/
 /* ============================================================== ***/
-
+var mainApp;
 //home page
 var index = function(req, res) {
   	res.layout('index', {
   		title: 'Andrin.ga',
    		description: 'Andrin.ga - The personal website of Peter Andringa',
-   		test: 'This is test text from the index'
+   		test: 'This is test text from the index',
+   		highlight: 'nav-home'
   	});
 };
 
 var about = function(req, res) {
 	res.layout('about', {
 		title: 'About | Andrin.ga',
-   		description: 'About Peter Andringa'
+   		description: 'About Peter Andringa',
+   		highlight: 'nav-about'
 	})
 };
 
 var projects = function(req, res) {
 	res.layout('projects', {
 		title: 'Projects | Andrin.ga',
-   		description: 'Peter\'s Current Projects'
+   		description: 'Peter\'s Current Projects',
+   		highlight: 'nav-projects'
 	})
 };
 
 var blog = function(req, res) {
-	res.layout('blog', {
-		title: 'Blog | Andrin.ga',
-   		description: 'Peter\'s Blog'
-	})
+	res.redirect(mainApp.locals.blogLink);
 };
 
 var admin = function(req, res) {
@@ -41,7 +41,8 @@ var admin = function(req, res) {
 
 //Export root functions
 module.exports = function(app, passport) {
-	//redirect www.andrin.ga to andrin.ga
+	mainApp = app;
+
 	app.all("*", function (req, res, next){
 		if (req.headers.host.match(/^www\./)) {
 			console.log("Redirecting...");

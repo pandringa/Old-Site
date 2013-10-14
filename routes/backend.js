@@ -2,7 +2,7 @@
 /*** ============================================================== */
 /** ======================== PAGE BUILDING ======================== **/
 /* ============================================================== ***/
-
+var mainApp;
 //home page
 var authCheck = function(req, res, next){
 	//Do something
@@ -36,14 +36,21 @@ var links = function(req, res) {
   	});
 }
 
+var blogAdmin = function(req, res) {
+	res.redirect(mainApp.locals.blogLink+"/ghost/")
+}
+
 
 
 //Export root functions
 module.exports = function(app, passport) {
+	mainApp = app;
+
 	app.get("/login", login)
 
 	app.all("/backend/*", authCheck);
 
 	app.get('/backend', index);
 	app.get('/backend/links', links);
+	app.get('/backend/blog-admin', blogAdmin)
 }
