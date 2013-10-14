@@ -6,8 +6,12 @@
 //home page
 var authCheck = function(req, res, next){
 	//Do something
-	//If user is legit, then
 	console.log('checking auth')
+
+	//If user isn't legit: then you would
+	//res.redirect(301, '/login')
+
+	//If user is legit, then
 	next();
 }
 
