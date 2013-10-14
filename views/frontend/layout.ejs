@@ -8,22 +8,23 @@
   <meta name="keywords" content="<%- tags %>" />
 
   <!-- UNUSED FONTS:
-  
-  -->
-  <!-- FONTS -->
   <link rel="stylesheet" href="/css/fonts/copse/stylesheet.css" type="text/css"/>
   <link rel="stylesheet" href="/css/fonts/bellota/stylesheet.css" type="text/css"/>
   <link rel="stylesheet" href="/css/fonts/elegantech/stylesheet.css" type="text/css"/>
   <link rel="stylesheet" href="/css/fonts/prosto/stylesheet.css" type="text/css"/>
-  <link rel="stylesheet" href="/css/fonts/lato/stylesheet.css" type="text/css"/>
   <link rel="stylesheet" href="/css/fonts/satellite/stylesheet.css" type="text/css"/>
   <link rel="stylesheet" href="/css/fonts/geo/stylesheet.css" type="text/css"/>
+  -->
+  <!-- FONTS -->
+  <link rel="stylesheet" href="/css/fonts/lato/stylesheet.css" type="text/css"/>
   <link rel="stylesheet" href="/css/fonts/snippet/stylesheet.css" type="text/css"/>
 
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css" type="text/css"/>
   <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 820px)" type="text/css"/>
 
+  
+ 
   <!-- Parallax scripts
   <script src="/js/jquery.js"></script>
   <script src="/js/homepage.js"></script>
@@ -31,7 +32,6 @@
   <script src="/js/modernizr.js"></script>
 </head>
 <body>
-  <!--[if IE]><div style='clear: both; height: 112px; padding:0; position: relative;'><a href="http://www.theie8countdown.com/ie-users-info"><img src="http://www.theie8countdown.com/assets/badge_iecountdown.png" border="0" height="112" width="348" alt="" /></a></div><![endif]-->
   <div id="header">
      <%- include header %>
   </div>
@@ -42,5 +42,9 @@
   <div id="footer">
       <%- include footer %>
   </div>
+
+  <script>
+    if(window.chrome) document.getElementById('Medium').id = 'Medium-chrome'; //Hack to fix SVG positioning in chrome
+  </script>
 </body>
 </html>

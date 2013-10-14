@@ -37,13 +37,6 @@ var admin = function(req, res) {
 	res.redirect('http://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=player_embedded'); //Link to a certain special music video
 };
 
-var backend = function(req, res) {
-	res.layout('login', {
-		title: "Login to Backend",
-		site: "backend"
-	})
-};
-
 
 
 //Export root functions
@@ -63,6 +56,4 @@ module.exports = function(app, passport) {
 	app.get('/projects', projects)
 	app.get('/blog', blog);
 	app.get('/admin-panel', admin);
-	app.get('/backend', auth);
-	app.get('/backend/*', auth);
 }

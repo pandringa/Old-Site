@@ -43,6 +43,16 @@ server.use(function(req, res, next){
 	next();
 });
 
+//Redirects all users to http://andrin.ga who are at www.andrin.ga
+server.use(function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+  	console.log("Redirecting:", 'http://'+req.headers.host+req.url, "to", 'http://'+req.headers.host.replace(/^www\./, '')+req.url)
+    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
+  } else {
+    next();     
+  }
+})
+
 server.use(express.cookieParser());
 server.use(express.bodyParser());
 
@@ -94,6 +104,7 @@ server.configure(function(){
 
 mainServer = server.listen(port);
 
-require('./../routes/index')(server, db);
+require('./../routes/frontend')(server, db);
+require('./../routes/backend')(server, db);
 
 console.log('Server Running!'.color("green"));

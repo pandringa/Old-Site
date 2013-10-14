@@ -34,3 +34,19 @@
 #header{
 	text-align: center;
 }
+
+#social{
+	float: none;
+	margin: auto;
+	clear: both;
+}
+.socialIcons{
+	margin: 0% 0.5%;
+}
+#footerText{
+	display: block;
+	clear: both;
+	text-align: center;
+	width: 98%;
+	padding-top: 70px;
+}
