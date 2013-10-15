@@ -3,7 +3,7 @@ var express = require("express");
 var mysql = require('mysql');
 var color = require("string-color");
 var server = module.exports = express();
-var port = 3000;
+var port = 5000;
 var appServer;
 server.siteRootDomain = "http://andrin.ga/"; //Fill in later
 var path = require('path');
@@ -105,7 +105,7 @@ server.configure(function(){
 mainServer = server.listen(port);
 
 //Locals
-server.locals.mainLink = "http://localhost:3000"
+server.locals.mainLink = "http://localhost:5000"
 server.locals.blogLink = "http://localhost:4000";
 
 

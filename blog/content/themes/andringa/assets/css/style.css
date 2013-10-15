@@ -1,0 +1,200 @@
+body{
+	font-family: 'lato', sans-serif;
+	font-weight: 300;
+	background-image: url(../img/backgrounds/ticks.png);
+	background-repeat: repeat;
+}
+
+::-moz-selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
+::selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
+.site-header{
+	height: 75px;
+	margin-left: 11%;
+	margin-right: 11%;
+	padding-top: 5px;
+	display: block;
+	top: 0px;
+	vertical-align: bottom;
+}
+.site-content{
+	top: 100px;
+	margin: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: 5px 5px 5px #AAA;
+	clear: both;
+	background-color: white;
+}
+
+
+.andringa-logo{
+	font-family: 'Snippet';
+	font-weight: normal;
+	color: black;
+	display: inline-block;
+	font-size: 60px;
+	float: left;
+	margin-top: 25px;
+	margin-bottom: 20px;
+	vertical-align: bottom;
+	top: 25px;
+	text-decoration: none;
+}
+.andringa-logo:hover{
+	color: #0099CC;
+	text-shadow:0 1px 0 rgba(255,255,255,0.8);
+}
+.bg {
+  background: url(../img/backgrounds/geometry.png) repeat;
+  position: fixed;
+  width: 100%;
+  height: 300%;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+.nav{
+	font-family: "Snippet";
+	display: inline-block;
+	color: black;
+	float: right;
+	font-size: 20px;
+	padding-top: 34px;
+	padding-bottom: 15px;
+	text-decoration: none;
+}
+.nav .links{
+	text-decoration: none;
+	color: black;
+	margin-left: 15px;
+	margin-right: 15px;
+	display: inline-block;
+	text-decoration: none;
+}
+.links:hover{
+	color: #0099CC;
+	text-shadow:0 1px 0 rgba(255,255,255,0.75);
+}
+#nav-selected{
+	color: #0099CC;
+	text-shadow:0 1px 0 rgba(255,255,255,0.75);
+}
+
+.site-footer{
+	padding: 15px;
+	padding-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 60px;
+	text-align: center;
+	font-size: 14px;
+}
+.footerContent{
+	display: inline;
+	text-align: right;
+}
+#footerText{
+	margin-right: 11%;
+	display: block;
+	text-align: right;
+}
+/* Social Icons stuff: */
+#social{
+	float: left;
+	margin-left: 11%;
+	top: -5px;
+	display: block;
+	height: 60px;
+	clear: both;
+}
+.socialIcons{
+	background-image: url('../img/social.svg');
+    width: 60px;
+	height: 62px;
+	display: inline-block;
+	margin: 0px 5px;
+}
+
+#Twitter{
+	background-position: 0px 0px;
+}
+#Twitter:hover{
+	background-position: 0px -200px !important;
+}
+
+#Facebook{
+	background-position: -79px 0px;
+}
+#Facebook:hover{
+	background-position: -79px -200px !important;
+}
+
+#Github{
+	background-position: -237px 0px;
+}
+#Github:hover{
+	background-position: -237px -200px !important;
+}
+
+#GooglePlus{
+	background-position: -158px -81px;
+}
+#GooglePlus:hover{
+	background-position: -158px -279px !important;
+}
+
+#Blog{
+	background-position: -79px -81px;
+}
+#Blog:hover{
+	background-position: -79px -279px !important;
+}
+
+#Dropbox{
+	background-position: -474px -81px;
+}
+#Dropbox:hover{
+	background-position: -474px -279px !important;
+}
+
+#Medium{
+	background-image: url(../img/medium-black.png);
+	background-repeat: no-repeat;
+}
+#Medium:hover{
+	background-image: url(../img/medium-color.png);
+	background-repeat: no-repeat;
+}
+/* Hack to make all fit in line, b/c of Chrome's SVG shift */
+#Medium-chrome{
+	background-image: url(../img/medium-black.png);
+	background-repeat: no-repeat;
+	top: -3px;
+}
+#Medium-chrome:hover{
+	background-image: url(../img/medium-color.png);
+}
+
+
+/* high-resolution devices */
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+    body{
+        background-image: url(../img/backgrounds/ticks_@2X.png);
+    }
+}

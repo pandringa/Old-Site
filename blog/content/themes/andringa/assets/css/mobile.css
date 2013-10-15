@@ -1,0 +1,52 @@
+.site-header{
+	margin: 5%;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.site-content{
+	margin: 15px;
+	margin-left: 12px;
+}
+.site-footer{
+
+}
+.andringa-logo{
+	margin: auto;
+	margin-bottom: 20px;
+	float: none;
+	padding: 0px;
+}
+.nav{
+	clear: both;
+	display: block;
+	margin: auto;
+	float: none;
+	padding: 0px;
+}
+.nav .links{
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#content{
+	margin-top: 50px;
+}
+
+#social{
+	float: none;
+	margin: auto;
+	clear: both;
+}
+.socialIcons{
+	margin: 0% 0.5%;
+	margin-bottom: 0px;
+}
+#footerText{
+	display: block;
+	clear: both;
+	text-align: center;
+	width: 98%;
+	padding-top: 70px;
+}
