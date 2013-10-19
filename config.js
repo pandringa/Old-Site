@@ -26,7 +26,7 @@ config = {
         // ```
 
         database: {
-            client: 'mysql',
+            client: 'sqlite3',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
@@ -47,7 +47,7 @@ config = {
         url: 'http://blog.andrin.ga',
         mail: {},
         database: {
-            client: 'mysql',
+            client: 'sqlite3',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost.db')
             },
