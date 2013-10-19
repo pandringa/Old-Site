@@ -8,14 +8,23 @@ var port = 3000;
 //
 // Http Proxy Server with Proxy Table
 //
-httpProxy.createServer({
+var server = httpProxy.createServer({
 	hostnameOnly: true,
 	router: {
-	'peterandrin.ga': 'localhost:3001',
-	'96.241.49.209': 'localhost:3001',
-	'blog.peterandrin.ga': 'localhost:3002'
+	'peterandrin.ga': '127.0.0.1:3001',
+	'www.peterandrin.ga': '127.0.0.1:3001',
+	'96.241.49.209': '127.0.0.1:3001',
+	'blog.peterandrin.ga': '127.0.0.1:3002'
 	}
-}).listen(port);
+});
+server.proxy.on('start', function(){
+	console.log("request made!");
+});
+server.proxy.on('end', function(){
+	console.log("request done!");
+})
+
+server.listen(port);
 
 
 
