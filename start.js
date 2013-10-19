@@ -10,8 +10,8 @@ var port = 3000;
 //
 httpProxy.createServer({
   router: {
-    'andrin.ga': 'localhost:3001',
-    'blog.andrin.ga': 'localhost:3002'
+    'peterandrin.ga': 'localhost:3001',
+    'blog.peterandrin.ga': 'localhost:3002'
   }
 }).listen(port);
 
