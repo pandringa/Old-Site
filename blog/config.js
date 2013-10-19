@@ -8,7 +8,7 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://localhost:3000/blog',
+        url: 'http://peterandrin.ga',
 
         // Example mail config
         // Visit http://docs.ghost.org/mail for instructions
@@ -26,7 +26,7 @@ config = {
         // ```
 
         database: {
-            client: 'sqlite3',
+            client: 'mysql',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
@@ -47,7 +47,7 @@ config = {
         url: 'http://blog.andrin.ga',
         mail: {},
         database: {
-            client: 'sqlite3',
+            client: 'mysql',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost.db')
             },
