@@ -8,7 +8,7 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://localhost:4000',
+        url: 'http://localhost:3000/blog',
 
         // Example mail config
         // Visit http://docs.ghost.org/mail for instructions
@@ -36,7 +36,7 @@ config = {
             // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '4000'
+            port: '3002'
         }
     },
 
@@ -57,7 +57,7 @@ config = {
             // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '4000'
+            port: '3002'
         }
     },
 

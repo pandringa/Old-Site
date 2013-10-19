@@ -26,7 +26,13 @@
 </head>
 <body>
   <div id="content">
-      This is login stuff
+      <form id="login" action="/login" method="post">
+          <label>Email</label>
+          <input type="text" name="email"></input>
+          <label>Password</label>
+          <input type="password" name="password"></input>
+          <input type="submit" class="submit" id="login" value="LOGIN">
+      </form>
   </div>
 </body>
 </html>

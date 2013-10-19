@@ -3,7 +3,7 @@ var express = require("express");
 var mysql = require('mysql');
 var color = require("string-color");
 var server = module.exports = express();
-var port = 5000;
+var port = 3001;
 var appServer;
 server.siteRootDomain = "http://andrin.ga/"; //Fill in later
 var path = require('path');
@@ -45,6 +45,7 @@ server.use(function(req, res, next){
 
 //Redirects all users to http://andrin.ga who are at www.andrin.ga
 server.use(function(req, res, next) {
+  console.log("Loaded!");
   if (req.headers.host.match(/^www/) !== null ) {
   	console.log("Redirecting:", 'http://'+req.headers.host+req.url, "to", 'http://'+req.headers.host.replace(/^www\./, '')+req.url)
     res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
@@ -105,8 +106,8 @@ server.configure(function(){
 mainServer = server.listen(port);
 
 //Locals
-server.locals.mainLink = "http://localhost:5000"
-server.locals.blogLink = "http://localhost:4000";
+server.locals.mainLink = "http://peterandrin.ga"
+server.locals.blogLink = "http://blog.peterandrin.ga";
 
 
 require('./../routes/frontend')(server, db);

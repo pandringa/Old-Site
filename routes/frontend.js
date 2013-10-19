@@ -34,7 +34,7 @@ var blog = function(req, res) {
 };
 
 var admin = function(req, res) {
-	res.redirect('http://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=player_embedded'); //Link to a certain special music video
+	res.redirect('http://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1'); //Link to a certain special music video
 };
 
 

@@ -1,16 +1,24 @@
-var http = require('http'),
+var util = require('util'),
+    colors = require('colors'),
+    http = require('http'),
     httpProxy = require('http-proxy');
 
+
+var port = 3000;
 //
-// Create a proxy server with custom application logic
+// Http Proxy Server with Proxy Table
 //
 httpProxy.createServer({
-
   router: {
-    'localhost': '127.0.0.1:5000',
-    'localhost:8080': '127.0.0.1:4000'
+    'andrin.ga': 'localhost:3001',
+    'blog.andrin.ga': 'localhost:3002'
   }
-}).listen(3000);
+}).listen(port);
+
+
+
+util.puts('http proxy server '.blue + 'started '.green.bold + 'on port '.blue + (port+' ').yellow + 'with proxy table'.magenta.underline);
+
 
 require('./blog/index.js');
 require('./server/app.js');
