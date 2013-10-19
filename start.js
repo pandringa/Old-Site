@@ -9,10 +9,11 @@ var port = 3000;
 // Http Proxy Server with Proxy Table
 //
 httpProxy.createServer({
-  router: {
-    'peterandrin.ga': 'localhost:3001',
-    'blog.peterandrin.ga': 'localhost:3002'
-  }
+	hostnameOnly: true,
+	router: {
+	'peterandrin.ga': 'localhost:3001',
+	'blog.peterandrin.ga': 'localhost:3002'
+	}
 }).listen(port);
 
 
