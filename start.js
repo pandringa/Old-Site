@@ -12,8 +12,8 @@ httpProxy.createServer({
 	hostnameOnly: true,
 	router: {
 	'peterandrin.ga': 'localhost:3001',
-	"96.241.49.209": 'localhost:3001',
-	//'blog.peterandrin.ga': 'localhost:3002'
+	'96.241.49.209': 'localhost:3001',
+	'blog.peterandrin.ga': 'localhost:3002'
 	}
 }).listen(port);
 
