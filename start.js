@@ -14,7 +14,8 @@ var server = httpProxy.createServer({
 	'peterandrin.ga': '127.0.0.1:3001',
 	'www.peterandrin.ga': '127.0.0.1:3001',
 	'96.241.49.209': '127.0.0.1:3001',
-	'blog.peterandrin.ga': '127.0.0.1:3002'
+	'blog.peterandrin.ga': '127.0.0.1:3002',
+	'localhost': '127.0.0.1:3001'
 	}
 });
 server.proxy.on('start', function(){
@@ -31,5 +32,5 @@ server.listen(port);
 util.puts('http proxy server '.blue + 'started '.green.bold + 'on port '.blue + (port+' ').yellow + 'with proxy table'.magenta.underline);
 
 
-//require('./blog/index.js');
 require('./server/app.js');
+require('./blog/index.js');

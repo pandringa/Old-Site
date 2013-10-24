@@ -8,7 +8,7 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://peterandrin.ga',
+        url: 'http://blog.andrin.ga',
 
         // Example mail config
         // Visit http://docs.ghost.org/mail for instructions
@@ -30,7 +30,7 @@ config = {
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
-            debug: true
+            debug: false
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
