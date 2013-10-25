@@ -26,11 +26,14 @@ config = {
         // ```
 
         database: {
-            client: 'sqlite3',
+            client: 'mysql',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
-            },
-            debug: false
+                host: 'localhost',
+                user: 'root',
+                password: '',
+                database: 'ghost',
+                charset: 'utf8'
+            }
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
@@ -47,11 +50,14 @@ config = {
         url: 'http://blog.andrin.ga',
         mail: {},
         database: {
-            client: 'sqlite3',
+            client: 'mysql',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
+                host: 'localhost',
+                user: 'root',
+                password: '',
+                database: 'ghost',
+                charset: 'utf8'
+            }
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`

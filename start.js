@@ -15,7 +15,8 @@ var server = httpProxy.createServer({
 	'www.peterandrin.ga': '127.0.0.1:3001',
 	'96.241.49.209': '127.0.0.1:3001',
 	'blog.peterandrin.ga': '127.0.0.1:3002',
-	'localhost': '127.0.0.1:3001'
+	'localhost': '127.0.0.1:3001',
+	'127.0.0.1': '127.0.0.1:3002'
 	}
 });
 server.proxy.on('start', function(){
