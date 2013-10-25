@@ -9,6 +9,9 @@ server.siteRootDomain = "http://andrin.ga/"; //Fill in later
 var path = require('path');
 var viewDir = path.join(__dirname, '../public');
 
+var mainLink = "http://peterandrin.ga/";
+var blogLink = "http://blog.peterandrin.ga/";
+
 server.set('view engine', 'ejs');
 server.engine('html', function(filename, options, callback) {
 	fs.readFile(filename, 'utf8', function(err, str){
@@ -29,9 +32,11 @@ server.use(function(req, res, next){
   		data.tags = data.tags || 'peter andringa, andringa, peter james andringa, peter andringa dc, andrin.ga, pja, peter andringa tj, peter andringa tjhsst ',
    		data.description = data.description || 'Andrin.ga - The personal website of Peter Andringa'
 		data.test = data.test || 'THIS IS A TEST!';
-
+    data.mainLink = mainLink;
+    data.blogLink = blogLink;
 		//BAKEND OR FRONTEND, DEFAULTS TO FRONTEND
 		var site = data.site || "frontend"; 
+
 
 		res.render(site+'/'+page, data, function(err, html){
 			if(err) console.error(err);
@@ -106,8 +111,8 @@ server.configure(function(){
 mainServer = server.listen(port);
 
 //Locals
-server.locals.mainLink = "http://peterandrin.ga"
-server.locals.blogLink = "http://blog.peterandrin.ga";
+server.locals.mainLink = mainLink;
+server.locals.blogLink = blogLink;
 
 
 require('./../routes/frontend')(server, db);
