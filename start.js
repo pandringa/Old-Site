@@ -19,12 +19,7 @@ var server = httpProxy.createServer({
 	'127.0.0.1': '127.0.0.1:3002'
 	}
 });
-server.proxy.on('start', function(){
-	console.log("request made!");
-});
-server.proxy.on('end', function(){
-	console.log("request done!");
-})
+
 
 server.listen(port);
 
