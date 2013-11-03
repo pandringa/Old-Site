@@ -147,7 +147,9 @@ User = GhostBookshelf.Model.extend({
         return this.forge({
             email: _userdata.email
         }).fetch({require: true}).then(function (user) {
+            console.log("Pre-Bcrypt call!");
             return nodefn.call(bcrypt.compare, _userdata.pw, user.get('password')).then(function (matched) {
+                console.log("Post-Bcrypt call!");
                 if (!matched) {
                     return when.reject(new Error('Your password is incorrect'));
                 }
