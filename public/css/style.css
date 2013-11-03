@@ -50,9 +50,9 @@ body{
 	font-weight: normal;
 	color: black;
 	display: inline-block;
-	font-size: 200px;
+	font-size: 60px;
 	float: left;
-	margin-bottom: 200px;
+	margin-bottom: 10px;
 	text-decoration: none;
 }
 .logo:hover{
