@@ -20,7 +20,10 @@ server.engine('html', function(filename, options, callback) {
     });
 });
 
-server.use(express.static(__dirname + "/../public")); //Root folder of app
+var week = 604800000;
+server.use(express.static(__dirname + "/../public", {maxAge: week})); //Sets caching for static files
+server.use(express.compress()); //GZIP compression
+
 
 //Puts together webpages (header+page+footer)
 server.use(function(req, res, next){
