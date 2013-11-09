@@ -1,11 +1,20 @@
+/* ----------------------- MODEL ----------------------- */
 function enterAbout(){
-	console.log("Fly in about here")
+	console.log("Fly in about here");
+	$('#aboutText').transition({'display': 'block'}, 100).transition({'left': "0px"}, 1500);
+	$('#aboutImage').transition({'display': 'block'}, 100).transition({'left': "0px"}, 1500);
 }
 function enterResume(){
 	console.log("fly in resume here")
+	$(".resumeSection").each(function( index ){
+		var self = this;
+		setTimeout(function(){
+			$(self).transition({'opacity': '1.0'}, 1300, 'ease');
+		}, 1000*index);
+	})
 }
 function enterProjects(){
-	console.log("fly in projects here")
+	console.log("fly in projects here");
 }
 function enterBlog(){
 	console.log("fly in blog here")
@@ -14,7 +23,7 @@ function enterContact(){
 	console.log("nothing contact-y here")
 }
 var sections = [
-	{color: '#55A', id: '#head', name: 'head', entered: true, enter: function(){return;} },
+	{color: '#ACACAC', id: '#head', name: 'head', entered: true, enter: function(){return;} },
 	{color: '#5A5', id: '#about', name: 'about', entered: false, enter: function(){if(!this.entered) enterAbout();} },
 	{color: '#A55', id: '#resume', name: 'resume', entered: false, enter: function(){if(!this.entered) enterResume();} },
 	{color: '#A5A', id: '#projects', name: 'projects', entered: false, enter: function(){if(!this.entered) enterProjects();} },
@@ -26,31 +35,40 @@ for(var i=0; i<sections.length; i++){
 	sec.top = $(sec.id).offset().top;
 }
 
-
-//Scrolling animations
-var scrollDuration = 2000;
-$(document).ready(function() {
-   $('#head').localScroll({duration:scrollDuration});
-   $('#about').localScroll({duration:scrollDuration*2});
-   $('#resume').localScroll({duration:scrollDuration*3});
-   $('#projects').localScroll({duration:scrollDuration*4});
-   $('#blog').localScroll({duration:scrollDuration*5});
-   $('#contact').localScroll({duration:scrollDuration*5});
-});
-//Variable holds current location
+//Variable holds current location (based off url)
 var idIndex = document.URL.indexOf("#");
 var currLocation;
 if(idIndex == -1)
 	currLocation = 'head';
 else
 	currLocation = document.URL.substring(idIndex);
-console.log(idIndex, currLocation);
+
+/* ----------------------- CONTROLLER ----------------------- */
+
+//Scrolling animations
+var scrollDuration = 2000;
+$(document).ready(function() {
+   $('#nav').localScroll({duration:scrollDuration});
+   $('#fixedNav').localScroll({duration:scrollDuration});
+
+   $('#fixedNav i').hover(
+		function(){$(this).removeClass('fa-circle-o'); $(this).addClass('fa-dot-circle-o'); $(this).next().css("display", 'inline')},
+    	function(){ $(this).removeClass('fa-dot-circle-o'); $(this).addClass('fa-circle-o'); $(this).next().css("display", 'none')}
+    )
+});
 
 function changeLocation(section){
 	console.log("Changing location to", section.name);
+	// Hide/show fixed nav circles
+	if(currLocation == 'head' && section.name != 'head')
+		setTimeout(function(){$('#fixedNav').transition({'opacity': '1.0'}, 2000);}, 1000);
+	else if(currLocation != 'head' && section.name == 'head')
+		$('#fixedNav').transition({'opacity': '0.0'}, 1000);
+
 	currLocation = section.name;
 	if(section.color != null)
 		$('#background').transition({'background': section.color});
+
 	section.enter();
 	section.entered = true;
 }
