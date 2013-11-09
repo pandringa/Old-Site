@@ -16,9 +16,9 @@
 }
 .nav{
 	clear: both;
+	float: none;
 	display: block;
 	margin: auto;
-	float: none;
 	padding: 0px;
 }
 .nav .links{
