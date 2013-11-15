@@ -31,7 +31,7 @@ config = {
                 host: 'localhost',
                 user: 'root',
                 password: '',
-                database: 'ghost',
+                database: 'andringa',
                 charset: 'utf8'
             }
         },
@@ -55,7 +55,7 @@ config = {
                 host: 'localhost',
                 user: 'root',
                 password: '',
-                database: 'ghost',
+                database: 'andringa',
                 charset: 'utf8'
             }
         },

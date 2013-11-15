@@ -10,14 +10,44 @@ function enterResume(){
 		var self = this;
 		setTimeout(function(){
 			$(self).transition({'opacity': '1.0'}, 1300, 'ease');
-		}, 1000*index);
+		}, 800*index);
 	})
 }
 function enterProjects(){
 	console.log("fly in projects here");
+	var count = 0;
+	$(".projectPanel").each(function( index ){
+		var self = this;
+		console.log("num", count);
+		var waitTime = 0;
+		if($(self).hasClass("projectPanel-left-center"))
+			waitTime = 0;
+		else if($(self).hasClass("projectPanel-right-center"))
+			waitTime = 300;
+		else if($(self).hasClass("projectPanel-left"))
+			waitTime = 500;
+		else if($(self).hasClass("projectPanel-right"))
+			waitTime = 600;
+		waitTime += 1000*(count / 4);
+		setTimeout(function(){
+			$(self).transition({'display': 'block'}, 100).transition({'left': "0px"}, 1500);
+		}, waitTime);
+		count++;
+	})
 }
 function enterBlog(){
-	console.log("fly in blog here")
+	console.log("fly in blog here");
+	var count = $('.blogPreview').length;
+	$(".blogPreview").each(function( index ){
+		var self = this;
+		setTimeout(function(){
+			$(self).transition({'opacity': '1.0'}, 100).transition({'top': "0px"}, 1200);
+		}, 800*(count-index-1));
+	});
+	setTimeout(function(){
+			$('#viewMore').transition({'opacity': '1.0'}, 2500);
+		}, (500*count)+1000);
+
 }
 function enterContact(){
 	console.log("nothing contact-y here")
@@ -52,9 +82,51 @@ $(document).ready(function() {
    $('#fixedNav').localScroll({duration:scrollDuration});
 
    $('#fixedNav i').hover(
-		function(){$(this).removeClass('fa-circle-o'); $(this).addClass('fa-dot-circle-o'); $(this).next().css("display", 'inline')},
-    	function(){ $(this).removeClass('fa-dot-circle-o'); $(this).addClass('fa-circle-o'); $(this).next().css("display", 'none')}
+		function(){
+			$(this).removeClass('fa-circle-o'); $(this).addClass('fa-dot-circle-o');
+			$(this).next().css("display", 'inline')
+		},function(){ 
+			$(this).removeClass('fa-dot-circle-o'); $(this).addClass('fa-circle-o');
+			$(this).next().css("display", 'none')
+		}
     )
+
+   if(window.innerWidth < 1200){//Bootstrap grid is two objects/row
+   		var panelNum = 0;
+   		$(".projectPanel").each(function( index ){
+			var self = this;
+			$(self).data('index', panelNum); //TODO fix this
+			switch(panelNum%2){
+				case 0:
+					$(self).addClass("projectPanel-left");
+					break;
+				case 1:
+					$(self).addClass("projectPanel-right");
+					break;
+			}
+			panelNum++;
+		});
+	}else{
+		var panelNum = 0;
+		$(".projectPanel").each(function( index ){
+			var self = this;
+			switch(panelNum%4){
+				case 0:
+					$(self).addClass("projectPanel-left");
+					break;
+				case 1:
+					$(self).addClass("projectPanel-left-center");
+					break;
+				case 2:
+					$(self).addClass("projectPanel-right-center");
+					break;
+				case 3:
+					$(self).addClass("projectPanel-right");
+					break;
+			}
+			panelNum++;
+		});
+	}
 });
 
 function changeLocation(section){

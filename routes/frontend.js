@@ -1,8 +1,11 @@
 
+var when = require("when");
 /*** ============================================================== */
 /** ======================== PAGE BUILDING ======================== **/
 /* ============================================================== ***/
-var mainApp;
+var app;
+var db;
+var blogLink = "http://localhost:3002";
 //home page
 var index = function(req, res) {
   	res.layout('index', {
@@ -12,6 +15,54 @@ var index = function(req, res) {
    		highlight: 'nav-home'
   	});
 };
+
+var home = function(req, res) {
+   	//Helper functions
+    function loadPosts(){
+    	var deferred = when.defer();
+    	db.query("SELECT * FROM posts WHERE status='published' ORDER BY published_at desc LIMIT 5", function(err, rows){
+	    	if(!err){
+	    		deferred.resolve(rows);
+	    	}
+	    	else{
+	    		console.error("Blog Post Query Failed", err);
+	    		deferred.reject(err);
+	    	}
+	    });
+	    return deferred.promise;
+    }
+    function loadProjects(){
+    	var deferred = when.defer();
+	    db.query("SELECT * FROM projects", function(err, rows){
+	    	if(!err){
+	    		deferred.resolve(rows);
+	    	}
+	    	else{
+	    		console.error("Projects Query Failed", err);
+	    		deferred.reject(err);
+	    	}
+	    });
+	    return deferred.promise;
+	}
+
+	//Data model
+	var data = {};
+	data.blogLink = blogLink;
+	var requests = [loadPosts(), loadProjects()];
+
+	//When our DB requests are done
+    when.all(requests).then(function(results){
+    	data.posts = results[0];
+    	data.projects = results[1];
+
+    	//Render the page!
+    	res.render('../views/frontend/home', data);
+
+    }, function(err){
+    	console.error("Error retrieving database data", err);
+    });
+    
+}
 
 var about = function(req, res) {
 	res.layout('about', {
@@ -41,8 +92,8 @@ var admin = function(req, res) {
 
 //Export root functions
 module.exports = function(app, passport) {
-	mainApp = app;
-
+	app = app;
+	db = app.db;
 	app.all("*", function (req, res, next){
 		if (req.headers.host.match(/^www\./)) {
 			console.log("Redirecting...");
@@ -57,4 +108,5 @@ module.exports = function(app, passport) {
 	app.get('/projects', projects)
 	app.get('/blog', blog);
 	app.get('/admin-panel', admin);
+	app.get('/home', home);
 }

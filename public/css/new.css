@@ -1,3 +1,4 @@
+/* General Rules */
 html{
 	height: 100%;
 }
@@ -17,10 +18,18 @@ a{
 	text-decoration: none;
 	font-weight: 500;
 	color: black;
+	-webkit-transition:color .1s;
+	-moz-transition:color .1s;
+	-o-transition:color .1s;
+	-ms-transition:color .1s;
+	transition:color .1s;
 }
 a:hover{
 	color: #D6EDFF;
 }
+
+
+/* Background */
 #background{
 	/*
 	background-image: url(../img/backgrounds/ticks.png);
@@ -31,12 +40,10 @@ a:hover{
 	width: 100%;
 	
 }
+
+/* Header Section */
 section #head{
 	min-height: 100%;
-}
-
-.sectionTitle{
-	margin-bottom: 30px;
 }
 .centered{
 	width: 400px;
@@ -49,7 +56,6 @@ section #head{
 	margin: auto;
 	text-align: center;
 }
-
 .logo{
 	font-family: 'Snippet';
 	font-weight: normal;
@@ -59,6 +65,11 @@ section #head{
 	text-decoration: none;
 	display: block;
 	text-align: center;
+	-webkit-transition:color .2s;
+	-moz-transition:color .2s;
+	-o-transition:color .2s;
+	-ms-transition:color .2s;
+	transition:color .2s;
 }
 .logo:hover{
 	color: #0099CC;
@@ -90,15 +101,20 @@ section #head{
 	text-shadow:0 1px 0 rgba(255,255,255,0.8);
 }
 
+/* General Rules for Sections */
 section{
 	min-height: 120%;
 	padding-top: 5%;
 	text-align: center;
-	padding-left: 15%;
-	padding-right: 15%;
+	padding-left: 12%;
+	padding-right: 12%;
+}
+.sectionTitle{
+	margin-bottom: 30px;
+	font-size: 50px;
 }
 
-
+/* About Section */
 #aboutImage{
 	left: 1000px;
 	display: none;
@@ -108,6 +124,8 @@ section{
 	display: none;
 	text-align: left;
 }
+
+/* Resume Section */
 .resumeSection{
 	width: 500px;
 	display: block;
@@ -121,6 +139,97 @@ section{
 .resumeSection ul{
 	text-align: left;
 }
+
+/* Project Section */
+.projectPanel{
+	position: relative;
+}
+.projectPanel .thumbnail{
+	background-color: rgba(255, 255, 255, 0.6);
+	padding: 10px;
+}
+.projectPanel-left {
+	left: -1500px;
+}
+.projectPanel-right {
+	left: 1500px;
+}
+.projectPanel-left-center {
+	left: -1500px;
+}
+.projectPanel-right-center {
+	left: 1500px;
+}
+.projectThumb {
+	width: 200px;
+	height: 200px;
+}
+/* Blog Section */
+.blogPreview{
+	max-width: 70%;
+	display: block;
+	margin: auto;
+	border-bottom: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 300;
+	position: relative;
+	top: -1000px;
+	opacity: 0.0;
+}
+.post-top{
+	border-top: 1px solid black;
+}
+.blogPreview-link:hover{
+	text-decoration: none;
+	color: black;
+}
+.blogPreview-meta {
+	display: block;
+	clear: both;
+	height: 50px;
+	margin-bottom: 10px;
+	line-height: 50px;
+	vertical-align: bottom;
+}
+.blogPreview-title {
+	display: inline-block;
+	float: left;
+	font-size: 40px;
+	text-align: left;
+	font-weight: 300;
+}
+.blogPreview-author {
+	display: inline-block;
+	float: right;
+	position: relative;
+	top: 15px;
+	color: #777;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: bottom;
+}
+.blogPreview-post {
+	display: block;
+	width: 100%;
+	text-align: left;
+	margin-top: 5px;
+	font-weight: 300;
+}
+.blogPreview-continue {
+	color: #555;
+}
+#viewMore {
+	display: block;
+	margin: auto;
+	font-size: 20px;
+	padding-top: 10px;
+	font-weight: 300;
+	opacity: 0.0;
+}
+
+
+/* Contact Section */
 #contact{
 	min-height: 100px;
 	padding-bottom: 0%;
@@ -129,6 +238,21 @@ section{
 	background-color: #313131;
 	color: white;
 }
+#contact a{
+	color: white;
+}
+#contact-button{
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+	max-width: 800px;
+}
+#contactText{
+	display: block;
+	margin: auto;
+}
+
+/* Fixed Navigation in corner */
 #fixedNav{
 	z-index: 100;
 	position: fixed;
@@ -162,25 +286,101 @@ section{
 	display: none;
 	color: black;
 }
-#contact a{
-	color: white;
-}
 
-
-#contact-button{
-	display: block;
-	margin: auto;
-	margin-top: 20px;
-	max-width: 800px;
-}
-
-.smallText{
-	display: block;
-	margin: auto;
-}
-
-footer{
+/*Footer Section*/
+#footer{
+	padding: 15px;
+	padding-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 60px;
+	text-align: center;
 	height: 200px;
 	background-color: #ACACAC;
 }
+.footerContent{
+	display: inline;
+	text-align: right;
+}
+#footerText{
+	margin-right: 11%;
+	display: block;
+	text-align: right;
+}
+#social{
+	float: left;
+	margin-left: 11%;
+	top: -5px;
+	display: block;
+	height: 60px;
+	clear: both;
+}
+.socialIcons{
+	background-image: url('../img/social.svg');
+    width: 60px;
+	height: 62px;
+	display: inline-block;
+	margin: 0px 5px;
+}
+#Twitter{
+	background-position: 0px 0px;
+}
+#Twitter:hover{
+	background-position: 0px -200px !important;
+}
+
+#Facebook{
+	background-position: -79px 0px;
+}
+#Facebook:hover{
+	background-position: -79px -200px !important;
+}
+
+#Github{
+	background-position: -237px 0px;
+}
+#Github:hover{
+	background-position: -237px -200px !important;
+}
+
+#GooglePlus{
+	background-position: -158px -81px;
+}
+#GooglePlus:hover{
+	background-position: -158px -279px !important;
+}
+
+#Blog{
+	background-position: -79px -81px;
+}
+#Blog:hover{
+	background-position: -79px -279px !important;
+}
+
+#Dropbox{
+	background-position: -474px -81px;
+}
+#Dropbox:hover{
+	background-position: -474px -279px !important;
+}
+
+#Medium{
+	background-image: url(../img/medium-black.png);
+	background-repeat: no-repeat;
+}
+#Medium:hover{
+	background-image: url(../img/medium-color.png);
+	background-repeat: no-repeat;
+}
+/* Hack to make all fit in line, b/c of Chrome's SVG shift */
+#Medium-chrome{
+	background-image: url(../img/medium-black.png);
+	background-repeat: no-repeat;
+	top: -3px;
+}
+#Medium-chrome:hover{
+	background-image: url(../img/medium-color.png);
+}
+
+
 

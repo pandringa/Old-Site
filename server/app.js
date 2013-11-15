@@ -25,9 +25,9 @@ server.use(express.static(__dirname + "/../public", {maxAge: week})); //Sets cac
 server.use(express.compress()); //GZIP compression
 
 
-//Puts together webpages (header+page+footer)
+
 server.use(function(req, res, next){
-	res.layout = function(page, obj){
+	res.layout = function(page, obj){ //Puts together webpages (header+page+footer)
 		var data = obj || {};
 
 		//SET DEFAULTS FOR EJS
@@ -97,6 +97,7 @@ function handleDisconnect(connection) {
 }
 
 handleDisconnect(db); //Manages disconnections of DB
+
 db.connect(function(err) {
   	if(err) {
     	console.log("MySQL Connection error:".color("red", "reverse"), err);
