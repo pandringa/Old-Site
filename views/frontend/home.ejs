@@ -22,6 +22,9 @@
 			<li><a href="#contact"><i class="fa fa-lg fa-circle-o"></i><span id="sideNav-contact">Contact</span></a></li>
 		</ul>
 	</div>
+	<div id="toTop">
+		<a href="#head"><i class="fa fa-angle-up fa-4x"></i></a>
+	</div>
 	<section name="head" id="head"><div class="centered">
 			<div class="logo">Peter Andringa</div>
 			<span class="bio">Mobile &amp; web developer, entrepreneur, and student.</span>
@@ -32,42 +35,10 @@
 		<h2 class="sectionTitle">About</h2>
 		<div class="row">
 			<div id="aboutText" class="col-xs-12 col-md-8">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p><span class="greet">Hello!</span> My name is Peter Andringa, and I'm currently a high school student at <a href="http://tjhsst.edu">Thomas Jefferson High School for Science and Technology</a>, an elite high school in Northern Virginia specifically for students who love math, science, engineering, and computer science. I'm currently in my Sophomore year, and even though its a lot of work I really enjoy studying there.</p>
+				<p>My first introduction to computer science came in 7th grade, when I picked up a cousin's C++ book and started to read it. I thought the idea of programming was fascinating, but I didn't quite understand everything going on in that book. I decided to teach myself how to code, by building a hands on project: creating an iPhone app. That, I figured, would be the fastest way for me to learn (because there were no CS classes available in my middle school). After struggling through Objective-C for a few months, I found that I simply didn't get it. At that point, I came across <a href="http://coronalabs.com">Corona SDK</a>, which allowed me to write for <span class="underline">both</span> iOS and Android, using a much simpler language called <a href="http://lua.org">Lua</a>. I started to teach myself, and eventually finished my app, a game called "Sharks Vs. Subs", in 8th grade. (It's since been removed from the App Store, but you can <a href="https://web.archive.org/web/20131115233610/https://itunes.apple.com/us/app/sharks-vs.-subs/id500865559">check it out on The Wayback Machine</a>).</p>
+				<p>Over the last couple years since then I've developed a passion for entrepreneurship, product design, and making my ideas come to life through code. Outside of school I spend much of my time devoted to these things, whether it be through internships, helping lead my school's entrepreneurship club, organizing <a href="http://tjhackathon.com">HackTJ</a> and <a href="http://gopilot.org">PilotDC</a>, or even just tinkering on some of my own <a href="#projects">projects</a>. I love building cool stuff and teaching others how to do so, because I think there's nothing cooler than seeing your idea come to life.</p>
+				<p>I'm always open to new opportunities or ideas, so don't hesitate to <a href="#contact">contact</a> me via email (<a href="mailto:peter@andrin.ga">peter@andrin.ga</a>), because I'd love to hear from you!</p>
 			</div>
 			<div id="aboutImage" class="col-xs-12 col-md-4">
 				<img src="../img/portrait.jpg" class="img-responsive"/>
@@ -107,7 +78,7 @@
 		<h2 class="sectionTitle">Projects</h2>
 		<div class="row">
 			<% for(var i=0; i<projects.length; i++) { %>
-			  <div class="col-sm-6 col-lg-3 projectPanel">
+			  <div class="col-sm-3 col-lg-3 projectPanel">
 			    <div class="thumbnail">
 			      <img src="../img/projects/<%= projects[i].image %>" alt="..." class="project-thumb">
 			      <div class="caption">
@@ -132,7 +103,8 @@
 			<% } %>
 					<div class="blogPreview-meta">
 						<h4 class="blogPreview-title"><%= posts[i].title %></h4>
-						<span class="blogPreview-author">Peter Andringa | <%= d.getMonth()+"/"+d.getDate()+"/"+d.getFullYear()  %></span>
+						<% var months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]; %>
+						<span class="blogPreview-author">Peter Andringa | <%= d.getDate()+" "+months[d.getMonth()]+" "+d.getFullYear()  %></span>
 					</div><br>
 					<% var paragraph = posts[i].html.indexOf('</p>'); var trim = posts[i].html.substring(0, paragraph) %>
 					<div class="blogPreview-post">
@@ -152,6 +124,7 @@
 
 	</section>
 	<footer name="foot" id="footer">
+	<div id="footerContainer">
 		<span id="social">
 		  <a href="https://twitter.com/p_andringa" id="Twitter" class="socialIcons" target="__blank"></a>
 		  <a href="https://facebook.com/peter.j.andringa" id="Facebook" class="socialIcons" target="__blank"></a>
@@ -166,6 +139,7 @@
 		  <span id="copyright" class="footerContent">&copy; 2013, Peter Andringa</span><br>
 		  <a href="/admin-panel" id="admin" class="footerContent" target="__blank">Go to Admin Panel</a>
 		</span>
+	</div>
 	</footer>
 </div>
 
@@ -173,7 +147,7 @@
 <script src="../js/core/jquery.min.js" type="text/javascript"></script> 
 <script src="../js/core/jquery.localscroll.js" type="text/javascript"></script> 
 <script src="../js/core/jquery.scrollTo.js" type="text/javascript"></script> 
-<script src="../js/core/jquery.translate.js" type="text/javascript"></script> 
+<script src="../js/core/jquery.translate.js" type="text/javascript"></script>
 <script src="../css/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../js/home.js" type="text/javascript"></script>
 </body>

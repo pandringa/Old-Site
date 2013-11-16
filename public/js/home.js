@@ -52,18 +52,29 @@ function enterBlog(){
 function enterContact(){
 	console.log("nothing contact-y here")
 }
+var palettes = [
+	['#06A2CB', '#218559', '#EBB035', '#DD1E2F', '#D0C6B1'],
+	['#3D4C53', '#70B7BA', '#F7E967', '#F1433F', '#A9CF54'],
+	['#425C81', '#5EA032', '#D59859', '#620C67', '#D3D1D2'],
+	['#656E75', '#679EC9', '#F1921A', '#669900', '#E6E7E8'],
+]
+var color = palettes[2];
 var sections = [
-	{color: '#ACACAC', id: '#head', name: 'head', entered: true, enter: function(){return;} },
-	{color: '#5A5', id: '#about', name: 'about', entered: false, enter: function(){if(!this.entered) enterAbout();} },
-	{color: '#A55', id: '#resume', name: 'resume', entered: false, enter: function(){if(!this.entered) enterResume();} },
-	{color: '#A5A', id: '#projects', name: 'projects', entered: false, enter: function(){if(!this.entered) enterProjects();} },
-	{color: '#5AA', id: '#blog', name: 'blog', entered: false, enter: function(){if(!this.entered) enterBlog();} },
+	{color: color[0], id: '#head', name: 'head', entered: true, enter: function(){return;} },
+	{color: color[1], id: '#about', name: 'about', entered: false, enter: function(){if(!this.entered) enterAbout();} },
+	{color: color[2], id: '#resume', name: 'resume', entered: false, enter: function(){if(!this.entered) enterResume();} },
+	{color: color[3], id: '#projects', name: 'projects', entered: false, enter: function(){if(!this.entered) enterProjects();} },
+	{color: color[4], id: '#blog', name: 'blog', entered: false, enter: function(){if(!this.entered) enterBlog();} },
 	{color: null, id: '#contact', name: 'contact', entered: false, enter: function(){if(!this.entered) enterContact();} }
 ]
-for(var i=0; i<sections.length; i++){
-	var sec = sections[i];
-	sec.top = $(sec.id).offset().top;
+function calculateTops(){
+	console.log("calculating tops");
+	for(var i=0; i<sections.length; i++){
+		var sec = sections[i];
+		sec.top = $(sec.id).offset().top;
+	}
 }
+calculateTops();
 
 //Variable holds current location (based off url)
 var idIndex = document.URL.indexOf("#");
@@ -80,6 +91,7 @@ var scrollDuration = 2000;
 $(document).ready(function() {
    $('#nav').localScroll({duration:scrollDuration});
    $('#fixedNav').localScroll({duration:scrollDuration});
+   $('#toTop').localScroll({duration:scrollDuration});
 
    $('#fixedNav i').hover(
 		function(){
@@ -133,15 +145,17 @@ function changeLocation(section){
 	console.log("Changing location to", section.name);
 	// Hide/show fixed nav circles
 	if(currLocation == 'head' && section.name != 'head')
-		setTimeout(function(){$('#fixedNav').transition({'opacity': '1.0'}, 2000);}, 1000);
-	else if(currLocation != 'head' && section.name == 'head')
+		setTimeout(function(){$('#fixedNav').transition({'opacity': '1.0'}, 2000);$('#toTop').transition({'opacity': '1.0'}, 2000);}, 1000);
+	else if(currLocation != 'head' && section.name == 'head'){
 		$('#fixedNav').transition({'opacity': '0.0'}, 1000);
+		$('#toTop').transition({'opacity': '0.0'}, 1000);
+	}
 
 	currLocation = section.name;
 	if(section.color != null)
 		$('#background').transition({'background': section.color});
 
-	section.enter();
+	setTimeout(section.enter, 500);
 	section.entered = true;
 }
 //Scroll detection for the stuff
@@ -156,3 +170,6 @@ $(window).scroll(function(){
     	}
     }
 });
+$(window).resize(function(){
+	calculateTops();
+})

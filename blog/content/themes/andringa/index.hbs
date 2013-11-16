@@ -7,20 +7,24 @@
 
 {{! The main content area on the homepage }}
 <main class="content" role="main">
-
+    <div class="blogPreview"></div>
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
 
-    <article class="{{post_class}}">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt}}&hellip;</p>
-        </section>
-    </article>
+        <a href="{{url}}" class="blogPreview-link">
+            <div class="blogPreview {{post_class}}">
+                <div class="blogPreview-meta">
+                    <h4 class="blogPreview-title">{{{title}}}</h4>
+                    <span class="blogPreview-author">Peter Andringa | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+                </div>
+                <div class="blogPreview-post">
+                <p>
+                    {{excerpt}}&hellip;
+                    <a href="<%= blogLink+'/'+posts[i].slug+'/' %>" class="blogPreview-continue">(Continued <i class="fa fa-arrow-right"></i>)</a>
+                </p>
+                </div>
+            </div>
+        </a>
 
     {{/foreach}}
 
