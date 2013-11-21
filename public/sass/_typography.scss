@@ -21,20 +21,9 @@
     }
 }
 
-/* Type styles for Pebble */
-
 $montr: 'monr', sans-serif;
 $montb: 'monb', sans-serif;
 $lato: 'Lato', sans-serif;
 $snippet: 'Snippet', sans-serif;
-$blue: #57A3E8;
+$blue: #0099CC;
 
-html {
-    font-size: 62.5%;
-}
-
-body {
-    @include set-font($muli, 1.6rem, 400);
-    line-height: 3.2rem;
-    color: #6a6a6a;
-}
