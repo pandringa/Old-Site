@@ -38,10 +38,11 @@ var links = function(req, res) {
 }
 
 var shorten = function(req, res) {
-	db.query("SELECT href FROM links WHERE title=?", req.route.params[0], function(err, result){
-		if(result.length > 0)
+	db.query("SELECT id, href, clicks FROM links WHERE title=?", req.route.params[0], function(err, result){
+		if(result.length > 0){
+			db.query("UPDATE links SET clicks=? WHERE id=?", [result[0].clicks+1, result[0].id]);
 			res.redirect(result[0].href);
-		else{
+		}else{
 			req.suggestions = [];
 			db.query("SELECT title FROM links", function(err, result){
 				console.log("DONE 2", result);
@@ -66,7 +67,7 @@ var blogAdmin = function(req, res) {
 module.exports = function(app, passport) {
 	app = app;
 	db = app.db;
-	
+
 	/*
 	app.get("/login", login)
 
