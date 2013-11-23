@@ -38,9 +38,10 @@ var links = function(req, res) {
 }
 
 var shorten = function(req, res) {
-	db.query("SELECT id, href, clicks FROM links WHERE title=?", req.route.params[0], function(err, result){
+	db.query("SELECT href, clicks FROM links WHERE title=?", req.route.params[0], function(err, result){
+		console.log("SHORTENING");
 		if(result.length > 0){
-			db.query("UPDATE links SET clicks=? WHERE id=?", [result[0].clicks+1, result[0].id]);
+			db.query("UPDATE links SET clicks = ? WHERE title = ?", [result[0].clicks+1, req.route.params[0]]);
 			res.redirect(result[0].href);
 		}else{
 			req.suggestions = [];
