@@ -17,6 +17,12 @@
     src: url("../fonts/montserratt/montserrat-regular-webfont.svg#montserratregular") format("svg");
 }
 }
+/* line 30, ../sass/_typography.scss */
+body {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
 /* General Rules */
 /* line 7, ../sass/screen.scss */
 html {
@@ -199,31 +205,32 @@ section .sectionTitle {
 #projects .row .projectPanel .thumbnail {
   background-color: rgba(255, 255, 255, 0.6);
   padding: 10px;
+  overflow: none;
 }
-/* line 161, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 #projects .row .projectPanel .thumbnail .projectThumb {
   width: 200px;
   height: 200px;
 }
-/* line 167, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 #projects .row .projectPanel-left {
   left: -1500px;
 }
-/* line 170, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 #projects .row .projectPanel-right {
   left: 1500px;
 }
-/* line 173, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 #projects .row .projectPanel-left-center {
   left: -1500px;
 }
-/* line 176, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 #projects .row .projectPanel-right-center {
   left: 1500px;
 }
 
 /* Blog Section */
-/* line 183, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 #blog .blogPreview {
   max-width: 70%;
   display: block;
@@ -236,12 +243,16 @@ section .sectionTitle {
   top: -1000px;
   opacity: 0.0;
 }
-/* line 196, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
+#blog .blogPreview .blogPreview-link {
+  font-weight: 300;
+}
+/* line 201, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-link:hover {
   text-decoration: none;
   color: black;
 }
-/* line 201, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-meta {
   display: block;
   clear: both;
@@ -250,7 +261,7 @@ section .sectionTitle {
   line-height: 50px;
   vertical-align: bottom;
 }
-/* line 208, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-meta .blogPreview-title {
   display: inline-block;
   float: left;
@@ -262,11 +273,11 @@ section .sectionTitle {
   -o-transition: color 0.1s;
   transition: color 0.1s;
 }
-/* line 217, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-meta .blogPreview-title:hover {
   color: #0099CC;
 }
-/* line 221, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-meta .blogPreview-author {
   display: inline-block;
   float: right;
@@ -277,7 +288,7 @@ section .sectionTitle {
   line-height: 50px;
   vertical-align: bottom;
 }
-/* line 232, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-post {
   display: block;
   width: 100%;
@@ -285,15 +296,15 @@ section .sectionTitle {
   margin-top: 5px;
   font-weight: 300;
 }
-/* line 238, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-post .blogPreview-continue {
   color: #555;
 }
-/* line 243, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 #blog .post-top {
   border-top: 1px solid black;
 }
-/* line 246, ../sass/screen.scss */
+/* line 251, ../sass/screen.scss */
 #blog #viewMore {
   display: block;
   margin: auto;
@@ -306,18 +317,18 @@ section .sectionTitle {
   -o-transition: color 0.1;
   transition: color 0.1;
 }
-/* line 254, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 #blog #viewMore:hover {
   text-decoration: none;
   color: #0099CC;
 }
-/* line 259, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 #blog .sectionTitle + a:first-child {
   border-top: 1px solid black;
 }
 
 /* Contact Section */
-/* line 265, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 #contact {
   min-height: 100px;
   padding-bottom: 0%;
@@ -326,25 +337,25 @@ section .sectionTitle {
   background-color: #313131;
   color: white;
 }
-/* line 272, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 #contact a {
   color: white;
 }
-/* line 275, ../sass/screen.scss */
+/* line 280, ../sass/screen.scss */
 #contact #contact-button {
   display: block;
   margin: auto;
   margin-top: 20px;
   max-width: 800px;
 }
-/* line 281, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 #contact #contactText {
   display: block;
   margin: auto;
 }
 
 /* Fixed Navigation in corner */
-/* line 289, ../sass/screen.scss */
+/* line 294, ../sass/screen.scss */
 #fixedNav {
   z-index: 100;
   position: fixed;
@@ -354,39 +365,39 @@ section .sectionTitle {
   margin-left: 15px;
   margin-bottom: 5px;
 }
-/* line 297, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 #fixedNav #fixedList {
   padding-left: 0px;
 }
-/* line 299, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 #fixedNav #fixedList li {
   margin-left: 5px;
   list-style-type: none;
 }
-/* line 303, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 #fixedNav #fixedList a {
   text-decoration: none;
 }
-/* line 305, ../sass/screen.scss */
+/* line 310, ../sass/screen.scss */
 #fixedNav #fixedList a:hover {
   color: black;
 }
-/* line 309, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 #fixedNav #fixedList i {
   margin-right: 5px;
   color: #313131;
 }
-/* line 312, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 #fixedNav #fixedList i:hover {
   color: black;
 }
-/* line 316, ../sass/screen.scss */
+/* line 321, ../sass/screen.scss */
 #fixedNav #fixedList span {
   display: none;
   color: black;
 }
 
-/* line 323, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 #toTop {
   width: 40px;
   height: 40px;
@@ -410,12 +421,12 @@ section .sectionTitle {
   transition: background-color .2s;
   opacity: 0.0;
 }
-/* line 338, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 #toTop a:hover {
   color: #313131;
   text-decoration: none;
 }
-/* line 343, ../sass/screen.scss */
+/* line 348, ../sass/screen.scss */
 #toTop i {
   display: inline;
   line-height: 40px;
@@ -423,13 +434,13 @@ section .sectionTitle {
   opacity: 0.5;
   font-size: 30px;
 }
-/* line 350, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 #toTop:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 /*Footer Section*/
-/* line 356, ../sass/screen.scss */
+/* line 361, ../sass/screen.scss */
 #footer {
   padding: 15px;
   padding-top: 0px;
@@ -441,7 +452,7 @@ section .sectionTitle {
   height: 150px;
   background-color: #425C81;
 }
-/* line 366, ../sass/screen.scss */
+/* line 371, ../sass/screen.scss */
 #footer #footerContainer {
   background-color: #CCC;
   width: 88%%;
@@ -451,7 +462,7 @@ section .sectionTitle {
   padding-bottom: 20px;
   /*box-shadow: 0px 5px 5px #222;*/
 }
-/* line 374, ../sass/screen.scss */
+/* line 379, ../sass/screen.scss */
 #footer #footerContainer #social {
   float: left;
   margin-left: 11%;
@@ -537,13 +548,13 @@ section .sectionTitle {
 #footer #footerContainer #social #Medium-chrome:hover {
   background-image: url(../img/medium-color.png);
 }
-/* line 384, ../sass/screen.scss */
+/* line 389, ../sass/screen.scss */
 #footer #footerContainer #footerText {
   margin-right: 11%;
   display: block;
   text-align: right;
 }
-/* line 388, ../sass/screen.scss */
+/* line 393, ../sass/screen.scss */
 #footer #footerContainer #footerText .footerContent {
   display: inline;
   text-align: right;

@@ -25,9 +25,9 @@ server.use(express.static(__dirname + "/../public", {maxAge: week})); //Sets cac
 server.use(express.compress()); //GZIP compression
 
 
-
+/*
 server.use(function(req, res, next){
-	res.layout = function(page, obj){ //Puts together webpages (header+page+footer)
+	res.layout = function(page, obj) { //Puts together webpages (header+page+footer)
 		var data = obj || {};
 
 		//SET DEFAULTS FOR EJS
@@ -50,17 +50,7 @@ server.use(function(req, res, next){
 
 	next();
 });
-
-//Redirects all users to http://andrin.ga who are at www.andrin.ga
-server.use(function(req, res, next) {
-  console.log("Loaded!");
-  if (req.headers.host.match(/^www/) !== null ) {
-  	console.log("Redirecting:", 'http://'+req.headers.host+req.url, "to", 'http://'+req.headers.host.replace(/^www\./, '')+req.url)
-    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next();     
-  }
-})
+*/
 
 server.use(express.cookieParser());
 server.use(express.bodyParser());

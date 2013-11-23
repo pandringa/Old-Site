@@ -3,20 +3,10 @@ var when = require("when");
 /*** ============================================================== */
 /** ======================== PAGE BUILDING ======================== **/
 /* ============================================================== ***/
-var app;
-var db;
 var blogLink = "http://localhost:3002";
-//home page
+var app, db;
+//Render main site
 var index = function(req, res) {
-  	res.layout('index', {
-  		title: 'Andrin.ga',
-   		description: 'Andrin.ga - The personal website of Peter Andringa',
-   		test: 'This is test text from the index',
-   		highlight: 'nav-home'
-  	});
-};
-
-var home = function(req, res) {
    	//Helper functions
     function loadPosts(){
     	var deferred = when.defer();
@@ -65,25 +55,17 @@ var home = function(req, res) {
 }
 
 var about = function(req, res) {
-	res.layout('about', {
-		title: 'About | Andrin.ga',
-   		description: 'About Peter Andringa',
-   		highlight: 'nav-about'
-	})
+	res.redirect("http://andrin.ga/#about");
 };
-
+var resume = function(req, res) {
+	res.redirect("http://andrin.ga/#resume");
+};
 var projects = function(req, res) {
-	res.layout('projects', {
-		title: 'Projects | Andrin.ga',
-   		description: 'Peter\'s Current Projects',
-   		highlight: 'nav-projects'
-	})
+	res.redirect("http://andrin.ga/#projects");
 };
-
 var blog = function(req, res) {
 	res.redirect(mainApp.locals.blogLink);
 };
-
 var admin = function(req, res) {
 	res.redirect('http://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1'); //Link to a certain special music video
 };
@@ -105,8 +87,8 @@ module.exports = function(app, passport) {
 
 	app.get('/', index);
 	app.get('/about', about);
+	app.get('/resume', resume);
 	app.get('/projects', projects)
 	app.get('/blog', blog);
 	app.get('/admin-panel', admin);
-	app.get('/home', home);
 }

@@ -158,9 +158,14 @@ section{
 			.thumbnail{
 				background-color: rgba(255, 255, 255, 0.6);
 				padding: 10px;
+				overflow: none;
 				.projectThumb {
 					width: 200px;
 					height: 200px;
+				}
+				.caption{
+					.buttonP{
+					}
 				}
 			}
 		}
@@ -192,7 +197,7 @@ section{
 		top: -1000px;
 		opacity: 0.0;
 		.blogPreview-link{
-
+			font-weight: 300;
 			&:hover{
 				text-decoration: none;
 				color: black;

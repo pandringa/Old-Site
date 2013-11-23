@@ -4,26 +4,12 @@
 var path = require('path'),
     config;
 
+
 config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         url: 'http://blog.andrin.ga',
-
-        // Example mail config
-        // Visit http://docs.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
 
         database: {
             client: 'mysql',
@@ -48,7 +34,6 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://blog.andrin.ga',
-        mail: {},
         database: {
             client: 'mysql',
             connection: {

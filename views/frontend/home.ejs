@@ -1,6 +1,13 @@
+<!--
+TODO: 
+	Find new picture for about
+	Speed optimizations
+	Write introductory blog post
+	Remove old website code
+-->
 <html>
 <head>
-	<title>New Test</title>
+	<title>Peter Andringa</title>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="../css/fonts/lato/stylesheet.css" type="text/css"/>
@@ -8,6 +15,16 @@
  	<link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css" type="text/css" />
  	<link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css" type="text/css" />
 	<link rel="stylesheet" href="../css/screen.css" type="text/css"/>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-45164401-1', 'andrin.ga');
+	  ga('send', 'pageview');
+
+	</script>
 </head>
 <body>
 
@@ -34,14 +51,16 @@
 	<section name="about" id="about">
 		<h2 class="sectionTitle">About</h2>
 		<div class="row">
+			<div class="col-xs-0 col-md-2"></div>
 			<div id="aboutText" class="col-xs-12 col-md-8">
 				<p><span class="greet">Hello!</span> My name is Peter Andringa, and I'm currently a high school student at <a href="http://tjhsst.edu">Thomas Jefferson High School for Science and Technology</a>, an elite high school in Northern Virginia specifically for students who love math, science, engineering, and computer science. I'm currently in my Sophomore year, and even though its a lot of work I really enjoy studying there.</p>
 				<p>My first introduction to computer science came in 7th grade, when I picked up a cousin's C++ book and started to read it. I thought the idea of programming was fascinating, but I didn't quite understand everything going on in that book. I decided to teach myself how to code, by building a hands on project: creating an iPhone app. That, I figured, would be the fastest way for me to learn (because there were no CS classes available in my middle school). After struggling through Objective-C for a few months, I found that I simply didn't get it. At that point, I came across <a href="http://coronalabs.com">Corona SDK</a>, which allowed me to write for <span class="underline">both</span> iOS and Android, using a much simpler language called <a href="http://lua.org">Lua</a>. I started to teach myself, and eventually finished my app, a game called "Sharks Vs. Subs", in 8th grade. (It's since been removed from the App Store, but you can <a href="https://web.archive.org/web/20131115233610/https://itunes.apple.com/us/app/sharks-vs.-subs/id500865559">check it out on The Wayback Machine</a>).</p>
 				<p>Over the last couple years since then I've developed a passion for entrepreneurship, product design, and making my ideas come to life through code. Outside of school I spend much of my time devoted to these things, whether it be through internships, helping lead my school's entrepreneurship club, organizing <a href="http://tjhackathon.com">HackTJ</a> and <a href="http://gopilot.org">PilotDC</a>, or even just tinkering on some of my own <a href="#projects">projects</a>. I love building cool stuff and teaching others how to do so, because I think there's nothing cooler than seeing your idea come to life.</p>
+				<p>Outside of academics and work I play on my school's golf team, and really enjoy playing piano, skiing and spending time with friends and family.</p> 
 				<p>I'm always open to new opportunities or ideas, so don't hesitate to <a href="#contact">contact</a> me via email (<a href="mailto:peter@andrin.ga">peter@andrin.ga</a>), because I'd love to hear from you!</p>
 			</div>
-			<div id="aboutImage" class="col-xs-12 col-md-4">
-				<img src="../img/portrait.jpg" class="img-responsive"/>
+			<div id="aboutImage" class="col-xs-0 col-md-2">
+				<!--<img src="../img/portrait.jpg" class="img-responsive"/>-->
 			</div>
 		</div>
 	</section>
@@ -85,9 +104,9 @@
 			        <h3><%= projects[i].name %></h3>
 			        <p><%- projects[i].description %></p>
 			        <% if(projects[i].github) { %>
-			        <p><a href="<%= projects[i].github %>" class="btn btn-primary" role="button" target="__blank">View on GitHub</a></p>
+			        <p class="buttonP"><a href="<%= projects[i].github %>" class="btn btn-primary" role="button" target="__blank">View on GitHub</a></p>
 			        <% } else { %> 
-			        <p><a href="#" class="btn btn-primary disabled" role="button" target="__blank">Coming soon to GitHub</a></p>
+			        <p class="buttonP"><a href="#" class="btn btn-primary disabled" role="button" target="__blank">Coming soon to GitHub</a></p>
 			        <% } %>
 			      </div>
 			    </div>
@@ -131,8 +150,6 @@
 	<div id="footerContainer">
 		<span id="social">
 		  <a href="https://twitter.com/p_andringa" id="Twitter" class="socialIcons" target="__blank"></a>
-		  <a href="https://facebook.com/peter.j.andringa" id="Facebook" class="socialIcons" target="__blank"></a>
-		  <a href="https://plus.google.com/105936787330120704498/" id="GooglePlus" class="socialIcons" target="__blank"></a>
 		  <a href="/blog" id="Blog" class="socialIcons" target="__blank"></a>
 		  <a href="http://medium.com/@p_andringa" id="Medium" class="socialIcons" target="__blank"></a>
 		  <a href="http://dropitto.me/pandringa" id="Dropbox" class="socialIcons" target="__blank"></a>
@@ -152,6 +169,7 @@
 <script src="../js/core/jquery.localscroll.js" type="text/javascript"></script> 
 <script src="../js/core/jquery.scrollTo.js" type="text/javascript"></script> 
 <script src="../js/core/jquery.translate.js" type="text/javascript"></script>
+<script src="../js/core/jquery.equalheights.js" type="text/javascript"></script>
 <script src="../css/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../js/home.js" type="text/javascript"></script>
 </body>

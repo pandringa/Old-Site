@@ -1,3 +1,9 @@
+/* ----------------------- Helpers ----------------------- */
+function capitalizeFirst(string)
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 /* ----------------------- MODEL ----------------------- */
 function enterAbout(){
 	console.log("Fly in about here");
@@ -88,12 +94,12 @@ else
 
 //Scrolling animations
 var scrollDuration = 2000;
-$(document).ready(function() {
-   $('#nav').localScroll({duration:scrollDuration});
-   $('#fixedNav').localScroll({duration:scrollDuration});
-   $('#toTop').localScroll({duration:scrollDuration});
+$(function(){
+	$('#nav').localScroll({duration:scrollDuration});
+	$('#fixedNav').localScroll({duration:scrollDuration});
+	$('#toTop').localScroll({duration:scrollDuration});
 
-   $('#fixedNav i').hover(
+	$('#fixedNav i').hover(
 		function(){
 			$(this).removeClass('fa-circle-o'); $(this).addClass('fa-dot-circle-o');
 			$(this).next().css("display", 'inline')
@@ -101,11 +107,11 @@ $(document).ready(function() {
 			$(this).removeClass('fa-dot-circle-o'); $(this).addClass('fa-circle-o');
 			$(this).next().css("display", 'none')
 		}
-    )
+	)
 
-   if(window.innerWidth < 1200){//Bootstrap grid is two objects/row
-   		var panelNum = 0;
-   		$(".projectPanel").each(function( index ){
+	if(window.innerWidth < 1200){//Bootstrap grid is two objects/row
+			var panelNum = 0;
+			$(".projectPanel").each(function( index ){
 			var self = this;
 			$(self).data('index', panelNum); //TODO fix this
 			switch(panelNum%2){
@@ -143,6 +149,11 @@ $(document).ready(function() {
 
 function changeLocation(section){
 	console.log("Changing location to", section.name);
+	if(section.name == 'head')
+		document.title = 'Peter Andringa';
+	else
+		document.title = 'Peter Andringa | '+capitalizeFirst(section.name);
+
 	// Hide/show fixed nav circles
 	if(currLocation == 'head' && section.name != 'head')
 		setTimeout(function(){$('#fixedNav').transition({'opacity': '1.0'}, 2000);$('#toTop').transition({'opacity': '1.0'}, 2000);}, 1000);
@@ -170,6 +181,4 @@ $(window).scroll(function(){
     	}
     }
 });
-$(window).resize(function(){
-	calculateTops();
-})
+$(window).resize(calculateTops);
