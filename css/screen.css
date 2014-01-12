@@ -1,68 +1,77 @@
+/* RALEWAY FONT */
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Raleway';
   font-style: normal;
-  font-weight: 300;
-  src: local("Lato Light"), local("Lato-Light"), url(http://themes.googleusercontent.com/static/fonts/lato/v7/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff) format("woff");
+  font-weight: 200;
+  src: local("Raleway ExtraLight"), local("Raleway-ExtraLight"), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/8KhZd3VQBtXTAznvKjw-k73hpw3pgy2gAi-Ip7WPMi0.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
-  src: local("Lato Regular"), local("Lato-Regular"), url(http://themes.googleusercontent.com/static/fonts/lato/v7/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format("woff");
+  src: local("Raleway"), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/cIFypx4yrWPDz3zOxk7hIQLUuEpTyoUstqEm5AMlJo4.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  src: local("Lato Bold"), local("Lato-Bold"), url(http://themes.googleusercontent.com/static/fonts/lato/v7/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format("woff");
+  src: local("Raleway Bold"), local("Raleway-Bold"), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/JbtMzqLaYbbbCL9X6EvaI73hpw3pgy2gAi-Ip7WPMi0.woff) format("woff");
+}
+
+/*DROID SERIF FONT*/
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Droid Serif"), local("DroidSerif"), url(http://themes.googleusercontent.com/static/fonts/droidserif/v4/0AKsP294HTD-nvJgucYTaLrIa-7acMAeDBVuclsi6Gc.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Snippet';
+  font-family: 'Droid Serif';
   font-style: normal;
-  font-weight: 400;
-  src: local("Snippet"), url(http://themes.googleusercontent.com/static/fonts/snippet/v4/fAP-E0beNC7crLbNRC9S7QLUuEpTyoUstqEm5AMlJo4.woff) format("woff");
+  font-weight: 700;
+  src: local("Droid Serif Bold"), local("DroidSerif-Bold"), url(http://themes.googleusercontent.com/static/fonts/droidserif/v4/QQt14e8dY39u-eYBZmppwRbnBKKEOwRKgsHDreGcocg.woff) format("woff");
 }
 
-/* Force SVG on webkit browsers (Chrome on Windows font fix) */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  @font-face {
-    font-family: 'monr';
-    src: url("../fonts/montserratt/montserrat-regular-webfont.svg#montserratregular") format("svg");
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Droid Serif Italic"), local("DroidSerif-Italic"), url(http://themes.googleusercontent.com/static/fonts/droidserif/v4/cj2hUnSRBhwmSPr9kS5894o3ZslTYfJv0R05CazkwN8.woff) format("woff");
 }
-}
-/* line 41, ../sass/_typography.scss */
+
+/* line 50, ../sass/_typography.scss */
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-family: "Droid Serif", serif;
+  font-weight: 400;
   font-size: 150%;
 }
 
-/* line 46, ../sass/_typography.scss */
+/* line 55, ../sass/_typography.scss */
 #background {
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 2.5rem;
 }
 @media only screen and (max-width: 640px) {
-  /* line 46, ../sass/_typography.scss */
+  /* line 55, ../sass/_typography.scss */
   #background {
     font-size: 3rem;
     line-height: 4rem;
   }
 }
 
-/* line 56, ../sass/_typography.scss */
-h2 {
-  font-family: "Snippet", sans-serif;
-  font-weight: normal;
+/* line 65, ../sass/_typography.scss */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
   color: black;
-  font-size: 30px;
+  line-height: 1.1;
 }
 
-/* line 62, ../sass/_typography.scss */
+/* line 71, ../sass/_typography.scss */
 a {
   text-decoration: none;
   font-weight: 500;
@@ -72,7 +81,7 @@ a {
   -o-transition: color 0.2s;
   transition: color 0.2s;
 }
-/* line 67, ../sass/_typography.scss */
+/* line 76, ../sass/_typography.scss */
 a:hover {
   color: #D6EDFF;
 }
@@ -184,8 +193,8 @@ section .sectionTitle {
 }
 /* line 87, ../sass/screen.scss */
 #head .centered .logo {
-  font-family: "Snippet", sans-serif;
-  font-weight: normal;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
   color: black;
   font-size: 60px;
   margin-bottom: 25px;
@@ -212,7 +221,8 @@ section .sectionTitle {
 #head .centered .bio {
   font-size: 1.75rem;
   color: #212121;
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
 }
 @media only screen and (max-width: 640px) {
   /* line 105, ../sass/screen.scss */
@@ -220,10 +230,10 @@ section .sectionTitle {
     font-size: 2.5rem;
   }
 }
-/* line 113, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 #head .centered #nav {
-  font-family: "Snippet", sans-serif;
-  font-weight: normal;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
   color: black;
   font-size: 2.5rem;
   color: black;
@@ -233,12 +243,12 @@ section .sectionTitle {
   text-align: center;
 }
 @media only screen and (max-width: 640px) {
-  /* line 113, ../sass/screen.scss */
+  /* line 114, ../sass/screen.scss */
   #head .centered #nav {
     font-size: 3rem;
   }
 }
-/* line 126, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #head .centered #nav a {
   color: black;
   text-decoration: none;
@@ -247,7 +257,7 @@ section .sectionTitle {
   -o-transition: color 0.2s;
   transition: color 0.2s;
 }
-/* line 130, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 #head .centered #nav a:hover {
   text-decoration: none;
   color: #ACACAC;
@@ -255,23 +265,23 @@ section .sectionTitle {
 }
 
 /* About Section */
-/* line 142, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 #about {
   padding-left: 60px;
   padding-right: 60px;
 }
-/* line 145, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 #about #aboutImage {
   opacity: 0.0;
 }
-/* line 151, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 #about #aboutImage .caption {
   font-style: italic;
   font-size: 1.5rem;
   width: 100%;
   text-align: center;
 }
-/* line 158, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 #about #aboutText {
   text-align: left;
   margin: auto;
@@ -279,7 +289,7 @@ section .sectionTitle {
 }
 
 /* Resume Section */
-/* line 169, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 #resume .resumeSection {
   max-width: 600px;
   width: 70%;
@@ -288,16 +298,16 @@ section .sectionTitle {
   margin-bottom: 40px;
 }
 @media only screen and (max-width: 640px) {
-  /* line 169, ../sass/screen.scss */
+  /* line 170, ../sass/screen.scss */
   #resume .resumeSection {
     width: 90%;
   }
 }
-/* line 179, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 #resume .resumeSection ul {
   text-align: left;
 }
-/* line 182, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 #resume .resumeSection .description {
   color: #535353;
   margin-left: 30px;
@@ -305,30 +315,30 @@ section .sectionTitle {
   display: block;
 }
 @media only screen and (max-width: 640px) {
-  /* line 182, ../sass/screen.scss */
+  /* line 183, ../sass/screen.scss */
   #resume .resumeSection .description {
     margin-left: 10px;
   }
 }
 @media only screen and (max-width: 640px) {
-  /* line 191, ../sass/screen.scss */
+  /* line 192, ../sass/screen.scss */
   #resume .resumeSection .section-head {
     font-size: 4rem;
   }
 }
-/* line 197, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 #resume .resumeSection.top {
   margin-top: 60px;
 }
 
 /* Project Section */
 @media only screen and (max-width: 640px) {
-  /* line 204, ../sass/screen.scss */
+  /* line 205, ../sass/screen.scss */
   #projects {
     z-index: 25;
   }
 }
-/* line 208, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 #projects .row {
   /*
   .projectPanel-left {
@@ -351,12 +361,12 @@ section .sectionTitle {
   }
   */
 }
-/* line 209, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 #projects .row .projectPanel {
   position: relative;
 }
 @media only screen and (max-width: 640px) {
-  /* line 209, ../sass/screen.scss */
+  /* line 210, ../sass/screen.scss */
   #projects .row .projectPanel {
     width: 90%;
     margin-left: 5%;
@@ -364,13 +374,13 @@ section .sectionTitle {
     z-index: 25;
   }
 }
-/* line 217, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 #projects .row .projectPanel .thumbnail {
   background-color: rgba(255, 255, 255, 0.6);
   padding: 10px;
   overflow: none;
 }
-/* line 224, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 #projects .row .projectPanel .thumbnail .projectThumb {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -378,16 +388,16 @@ section .sectionTitle {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 228, ../sass/screen.scss */
+/* line 229, ../sass/screen.scss */
 #projects .row .projectPanel .thumbnail .caption .buttonP {
   text-align: center;
 }
-/* line 230, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 #projects .row .projectPanel .thumbnail .caption .buttonP a {
   text-align: center;
 }
 @media only screen and (max-width: 640px) {
-  /* line 230, ../sass/screen.scss */
+  /* line 231, ../sass/screen.scss */
   #projects .row .projectPanel .thumbnail .caption .buttonP a {
     width: 90%;
     margin: auto;
@@ -396,15 +406,15 @@ section .sectionTitle {
 }
 
 /* Blog Section */
-/* line 265, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 #blog {
   padding-bottom: 125px;
 }
-/* line 267, ../sass/screen.scss */
+/* line 268, ../sass/screen.scss */
 #blog #fillPosts {
   display: none;
 }
-/* line 270, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 #blog .blogPreview {
   max-width: 70%;
   display: block;
@@ -412,11 +422,10 @@ section .sectionTitle {
   border-bottom: 1px solid black;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: 300;
   position: relative;
 }
 @media only screen and (max-width: 640px) {
-  /* line 270, ../sass/screen.scss */
+  /* line 271, ../sass/screen.scss */
   #blog .blogPreview {
     max-width: 100%;
   }
@@ -443,20 +452,21 @@ section .sectionTitle {
 #blog .blogPreview .blogPreview-meta .blogPreview-title {
   display: inline-block;
   float: left;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
   font-size: 40px;
   text-align: left;
-  font-weight: 300;
   width: 100%;
   -webkit-transition: color 0.1s;
   -moz-transition: color 0.1s;
   -o-transition: color 0.1s;
   transition: color 0.1s;
 }
-/* line 306, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-meta .blogPreview-title:hover {
   color: #0099CC;
 }
-/* line 309, ../sass/screen.scss */
+/* line 310, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-meta .blogPreview-title .blogPreview-author {
   display: inline-block;
   float: right;
@@ -468,23 +478,24 @@ section .sectionTitle {
   font-size: 1.5rem;
   vertical-align: bottom;
 }
-/* line 322, ../sass/screen.scss */
+/* line 323, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-post {
   display: block;
   width: 100%;
   text-align: left;
   margin-top: 5px;
-  font-weight: 300;
+  font-family: "Droid Serif", serif;
+  font-weight: 400;
 }
-/* line 328, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 #blog .blogPreview .blogPreview-post .blogPreview-continue {
   color: #555;
 }
-/* line 333, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 #blog .post-top {
   border-top: 1px solid black;
 }
-/* line 336, ../sass/screen.scss */
+/* line 338, ../sass/screen.scss */
 #blog #viewMore {
   display: block;
   margin: auto;
@@ -498,23 +509,23 @@ section .sectionTitle {
   transition: color 0.1;
 }
 @media only screen and (max-width: 640px) {
-  /* line 336, ../sass/screen.scss */
+  /* line 338, ../sass/screen.scss */
   #blog #viewMore {
     font-size: 4rem;
   }
 }
-/* line 347, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 #blog #viewMore:hover {
   text-decoration: none;
   color: #0099CC;
 }
-/* line 352, ../sass/screen.scss */
+/* line 354, ../sass/screen.scss */
 #blog .sectionTitle + a:first-child {
   border-top: 1px solid black;
 }
 
 /* Contact Section */
-/* line 358, ../sass/screen.scss */
+/* line 360, ../sass/screen.scss */
 #contact {
   min-height: 80px;
   padding-bottom: 0%;
@@ -523,11 +534,11 @@ section .sectionTitle {
   background-color: #313131;
   color: white;
 }
-/* line 365, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 #contact a {
   color: white;
 }
-/* line 368, ../sass/screen.scss */
+/* line 370, ../sass/screen.scss */
 #contact #contact-button {
   display: block;
   margin: auto;
@@ -535,19 +546,19 @@ section .sectionTitle {
   max-width: 800px;
 }
 @media only screen and (max-width: 640px) {
-  /* line 368, ../sass/screen.scss */
+  /* line 370, ../sass/screen.scss */
   #contact #contact-button {
     font-size: 4rem;
   }
 }
-/* line 377, ../sass/screen.scss */
+/* line 379, ../sass/screen.scss */
 #contact #contactText {
   display: block;
   margin: auto;
 }
 
 /* Fixed Navigation in corner */
-/* line 385, ../sass/screen.scss */
+/* line 387, ../sass/screen.scss */
 #fixedNav {
   z-index: 100;
   position: fixed;
@@ -556,46 +567,48 @@ section .sectionTitle {
   opacity: 0.0;
   margin-left: 15px;
   margin-top: 5px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
 }
 @media only screen and (max-width: 640px) {
-  /* line 385, ../sass/screen.scss */
+  /* line 387, ../sass/screen.scss */
   #fixedNav {
     display: none;
   }
 }
-/* line 396, ../sass/screen.scss */
+/* line 400, ../sass/screen.scss */
 #fixedNav #fixedList {
   padding-left: 0px;
 }
-/* line 398, ../sass/screen.scss */
+/* line 402, ../sass/screen.scss */
 #fixedNav #fixedList li {
   margin-left: 5px;
   list-style-type: none;
 }
-/* line 402, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 #fixedNav #fixedList a {
   text-decoration: none;
 }
-/* line 404, ../sass/screen.scss */
+/* line 408, ../sass/screen.scss */
 #fixedNav #fixedList a:hover {
   color: black;
 }
-/* line 408, ../sass/screen.scss */
+/* line 412, ../sass/screen.scss */
 #fixedNav #fixedList i {
   margin-right: 5px;
   color: #313131;
 }
-/* line 411, ../sass/screen.scss */
+/* line 415, ../sass/screen.scss */
 #fixedNav #fixedList i:hover {
   color: black;
 }
-/* line 415, ../sass/screen.scss */
+/* line 419, ../sass/screen.scss */
 #fixedNav #fixedList span {
   display: none;
   color: black;
 }
 
-/* line 421, ../sass/screen.scss */
+/* line 425, ../sass/screen.scss */
 #mobileNav {
   display: none;
   opacity: 0.0;
@@ -610,39 +623,39 @@ section .sectionTitle {
   transition: opacity 0.2s;
 }
 @media only screen and (max-width: 640px) {
-  /* line 421, ../sass/screen.scss */
+  /* line 425, ../sass/screen.scss */
   #mobileNav {
     display: block;
   }
 }
-/* line 433, ../sass/screen.scss */
+/* line 437, ../sass/screen.scss */
 #mobileNav ul {
   background-color: #313131;
   margin-left: 0px;
   padding-left: 0px;
   opacity: 1.0;
 }
-/* line 438, ../sass/screen.scss */
+/* line 442, ../sass/screen.scss */
 #mobileNav ul li {
   list-style: none;
   text-align: center;
 }
-/* line 441, ../sass/screen.scss */
+/* line 445, ../sass/screen.scss */
 #mobileNav ul li a {
   color: white;
   display: block;
   opacity: 1.0;
 }
-/* line 445, ../sass/screen.scss */
+/* line 449, ../sass/screen.scss */
 #mobileNav ul li a:hover {
   color: #D6EDFF;
 }
-/* line 451, ../sass/screen.scss */
+/* line 455, ../sass/screen.scss */
 #mobileNav:hover {
   opacity: 1.0;
 }
 
-/* line 455, ../sass/screen.scss */
+/* line 459, ../sass/screen.scss */
 #toTop {
   width: 40px;
   height: 40px;
@@ -665,17 +678,17 @@ section .sectionTitle {
   opacity: 0.0;
 }
 @media only screen and (max-width: 640px) {
-  /* line 455, ../sass/screen.scss */
+  /* line 459, ../sass/screen.scss */
   #toTop {
     display: none;
   }
 }
-/* line 473, ../sass/screen.scss */
+/* line 477, ../sass/screen.scss */
 #toTop a:hover {
   color: #313131;
   text-decoration: none;
 }
-/* line 478, ../sass/screen.scss */
+/* line 482, ../sass/screen.scss */
 #toTop i {
   display: inline;
   line-height: 40px;
@@ -683,12 +696,12 @@ section .sectionTitle {
   opacity: 0.5;
   font-size: 30px;
 }
-/* line 485, ../sass/screen.scss */
+/* line 489, ../sass/screen.scss */
 #toTop:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 490, ../sass/screen.scss */
+/* line 494, ../sass/screen.scss */
 #scrollDown {
   position: fixed;
   bottom: 10px;
@@ -697,6 +710,7 @@ section .sectionTitle {
   width: 80%;
   margin: 0 0 0 -40%;
   left: 50%;
+  z-index: 3;
   -webkit-transition: opacity 0.1s;
   -moz-transition: opacity 0.1s;
   -o-transition: opacity 0.1s;
@@ -704,19 +718,20 @@ section .sectionTitle {
   opacity: 0.5;
 }
 @media only screen and (max-width: 640px) {
-  /* line 490, ../sass/screen.scss */
+  /* line 494, ../sass/screen.scss */
   #scrollDown {
     display: none;
   }
 }
-/* line 504, ../sass/screen.scss */
+/* line 509, ../sass/screen.scss */
 #scrollDown a:hover {
   text-decoration: none;
 }
-/* line 508, ../sass/screen.scss */
+/* line 513, ../sass/screen.scss */
 #scrollDown i {
   display: inline;
   color: #888;
+  z-index: 3;
   -webkit-transition: opacity 0.1s;
   -moz-transition: opacity 0.1s;
   -o-transition: opacity 0.1s;
@@ -726,17 +741,17 @@ section .sectionTitle {
   -o-transition: color 0.1s;
   transition: color 0.1s;
 }
-/* line 513, ../sass/screen.scss */
+/* line 519, ../sass/screen.scss */
 #scrollDown i:hover {
   color: #FFF;
 }
-/* line 517, ../sass/screen.scss */
+/* line 523, ../sass/screen.scss */
 #scrollDown:hover {
   opacity: 0.9;
 }
 
 /*Footer Section*/
-/* line 523, ../sass/screen.scss */
+/* line 529, ../sass/screen.scss */
 #footer {
   padding: 15px;
   padding-top: 0px;
@@ -748,7 +763,7 @@ section .sectionTitle {
   min-height: 130px;
   background-color: #CCC;
 }
-/* line 533, ../sass/screen.scss */
+/* line 539, ../sass/screen.scss */
 #footer #footerContainer {
   background: none;
   width: 95%;
@@ -758,7 +773,7 @@ section .sectionTitle {
   padding-bottom: 20px;
   /*box-shadow: 0px 5px 5px #222;*/
 }
-/* line 541, ../sass/screen.scss */
+/* line 547, ../sass/screen.scss */
 #footer #footerContainer #social {
   float: left;
   margin-left: 11%;
@@ -845,21 +860,21 @@ section .sectionTitle {
   background-image: url(../img/medium-color.png);
 }
 @media only screen and (max-width: 640px) {
-  /* line 541, ../sass/screen.scss */
+  /* line 547, ../sass/screen.scss */
   #footer #footerContainer #social {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
   }
 }
-/* line 556, ../sass/screen.scss */
+/* line 562, ../sass/screen.scss */
 #footer #footerContainer #footerText {
   margin-right: 11%;
   display: block;
   text-align: right;
 }
 @media only screen and (max-width: 640px) {
-  /* line 556, ../sass/screen.scss */
+  /* line 562, ../sass/screen.scss */
   #footer #footerContainer #footerText {
     clear: both;
     margin-top: 2px;
@@ -867,13 +882,13 @@ section .sectionTitle {
     width: 100%;
   }
 }
-/* line 566, ../sass/screen.scss */
+/* line 572, ../sass/screen.scss */
 #footer #footerContainer #footerText .footerContent {
   display: inline;
   text-align: right;
 }
 @media only screen and (max-width: 640px) {
-  /* line 566, ../sass/screen.scss */
+  /* line 572, ../sass/screen.scss */
   #footer #footerContainer #footerText .footerContent {
     clear: both;
     margin-top: 2px;

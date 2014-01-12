@@ -199,6 +199,13 @@ $(function(){
 	$('.mobileMenu-links').click(function(){
 		closeJPushMenu();
 	});
+
+	if(window.location.hash.length > 0){
+		$('#fixedNav').css('display', '').transition({'opacity': '1.0'}, 2000);
+		$('#toTop').css('display', '').transition({'opacity': '1.0'}, 2000);
+		$('#mobileNav').css('display', '').transition({'opacity': '1.0'}, 2000);
+		$("#scrollDown").css('display', 'none');
+	}
 });
 
 function changeLocation(section){

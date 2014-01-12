@@ -86,7 +86,7 @@ section{
 		}
 		.logo{
 			font-family: $header;
-			font-weight: normal;
+			font-weight: $headerWeight;
 			color: black;
 			font-size: 60px;
 			margin-bottom: 25px;
@@ -105,14 +105,15 @@ section{
 		.bio{
 			font-size: 1.75rem;
 			color: #212121;
-			font-family: $body;
+			font-family: $header;
+			font-weight: $bodyWeight;
 			@include respond-to(mobile){
 				font-size: 2.5rem;
 			}
 		}
 		#nav{
 			font-family: $header;
-			font-weight: normal;
+			font-weight: $headerWeight;
 			color: black;
 			font-size: 2.5rem;
 			color: black;
@@ -274,7 +275,6 @@ section{
 		border-bottom: 1px solid black;
 		padding-top: 10px;
 		padding-bottom: 10px;
-		font-weight: 300;
 		position: relative;
 		//top: -1000px;
 		//opacity: 0.0;
@@ -298,9 +298,10 @@ section{
 			.blogPreview-title {
 				display: inline-block;
 				float: left;
+				font-family: $header;
+				font-weight: $headerWeight;
 				font-size: 40px;
 				text-align: left;
-				font-weight: 300;
 				width: 100%;
 				@include transition(color .1s);
 				&:hover {
@@ -324,7 +325,8 @@ section{
 			width: 100%;
 			text-align: left;
 			margin-top: 5px;
-			font-weight: 300;
+			font-family: $body;
+			font-weight: $bodyWeight;
 			.blogPreview-continue {
 				color: #555;
 			}
@@ -390,6 +392,8 @@ section{
 	opacity: 0.0;
 	margin-left: 15px;
 	margin-top: 5px;
+	font-family: $header;
+	font-weight: $headerWeight;
 	@include respond-to(mobile){
 		display: none;
 	}
@@ -495,6 +499,7 @@ section{
 	width:80%;
     margin: 0 0 0 -40%;
     left:50%;
+    z-index: 3;
 	@include transition(opacity .1s);
 	opacity: 0.5;
 	@include respond-to(mobile){
@@ -508,6 +513,7 @@ section{
 	i{
 		display: inline;
 		color: #888;
+		z-index: 3;
 		@include transition(opacity .1s);
 		@include transition(color .1s);
 		&:hover{
