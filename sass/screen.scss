@@ -38,7 +38,7 @@ body{
 /* General Rules for Sections */
 section{
 	min-height: 100vh;
-	padding-top: 5%;
+	padding-bottom: 5%;
 	text-align: center;
 	padding-left: 12%;
 	padding-right: 12%;
@@ -168,23 +168,16 @@ section{
 /* Resume Section */
 #resume{
 	.resumeSection{
-		max-width: 600px;
-		width: 70%;
-		display: block;
-		margin: auto;
-		margin-bottom: 40px;
 		@include respond-to(mobile){
-			width: 90%
 		}
-		//opacity: 0.0;
 		ul{
 			text-align: left;
 		}
 		.description{
 			color: #535353;
-			margin-left: 30px;
 			margin-bottom: 10px;
 			display: block;
+			font-size: 1.25rem;
 			@include respond-to(mobile){
 				margin-left: 10px;
 			}
@@ -195,8 +188,20 @@ section{
 			}
 		}
 	}
-	.resumeSection.top{
-		margin-top: 60px;
+	#downloadResume{
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-family: $header;
+		font-weight: $headerWeight;
+		font-size: 20px;
+		a{
+			text-decoration: none;
+			color: black;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
