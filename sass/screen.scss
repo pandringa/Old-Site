@@ -47,7 +47,10 @@ section{
 		padding: 60px;
 		padding-top: 10%;
 		padding-bottom: 10%;
-		min-height: 100vh;
+		min-height: 100%;
+	}
+	@include respond-to(tablet) {
+		min-height: 100%;
 	}
 	.sectionTitle{
 		margin-bottom: 30px;
@@ -69,7 +72,10 @@ section{
 	width: 100%;
 	clear: both;
 	@include respond-to(mobile){
-		height: 90vh;
+		height: 820px;
+	}
+	@include respond-to(mobile){
+		height: 820px;
 	}
 	.centered{
 		width: 500px;
@@ -203,6 +209,10 @@ section{
 				text-decoration: underline;
 			}
 		}
+		@include respond-to(mobile){
+			font-size: 40px;
+			margin-top: 40px;
+		}
 	}
 }
 
@@ -232,6 +242,11 @@ section{
 					@include border-radius(5px);
 				}
 				.caption{
+					h3 {
+						@include respond-to(mobile){
+							font-size: 50px;
+						}
+					}
 					.buttonP{
 						text-align: center;
 						a {
@@ -239,7 +254,7 @@ section{
 							@include respond-to(mobile){
 								width: 90%;
 								margin: auto;
-								font-size: 2rem;
+								font-size: 30px;
 							}
 						}
 					}
@@ -310,6 +325,9 @@ section{
 				text-align: left;
 				width: 100%;
 				@include transition(color .1s);
+				@include respond-to(mobile){
+					font-size: 50px;
+				}
 				&:hover {
 					color: #0099CC;
 				}
@@ -323,6 +341,11 @@ section{
 					line-height: 50px;
 					font-size: 1.5rem;
 					vertical-align: bottom;
+					@include respond-to(mobile){
+						font-size: 25px;
+						margin-bottom: 10px;
+						color: black;
+					}
 				}
 			}
 		}	

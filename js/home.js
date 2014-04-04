@@ -216,7 +216,7 @@ function changeLocation(section){
 		title = 'Peter Andringa | '+capitalizeFirst(section.name);
 		window.history.pushState({location: "#"+section.name}, "#"+capitalizeFirst(section.name), "#"+section.name);
 	}
-
+	console.log("Move to ", section);
 	
 	// Hide/show fixed nav circles
 	if(currLocation == 'head' && section.name != 'head'){
